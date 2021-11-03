@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>login</title>
+        <style>
+            .main-container{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 250px
+            }
+            .login-input-section-wrap{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px
+            }
+            #inputId{
+                width: 250px;
+                height: 40px;
+                margin: 5px;
+                border-width: 1px;
+                border-radius: 5px;
+            }
+            #inputPassword{
+                width: 250px;
+                height: 40px;
+                margin: 5px;
+                border-width: 1px;
+                border-radius: 5px;
+            }
+            #btnLogin{
+                width: 120px;
+                height: 35px;
+                font-size: large;
+                margin-top: 10px;
+                background-color: gray;
+                color: white;
+                border-radius: 5px;
+            }
+           .sign-up{
+               margin-top: 10px;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+        <header>
+            <div class="logo-wrap">
+                <img src="login_mainlogo.PNG">
+            </div>
+        </header>
+        <section class="login-input-section-wrap">
+            <div class="login-input-wrap">
+                <input placeholder="Username" type="text" id="inputId"></input>
+            </div>
+            <div class="passward-input-wrap">
+                <input placeholder="Password" type="password" id="inputPassword"></input>
+            </div>
+            <div class="login-button-wrap">
+                <button id="btnLogin">로그인</button>
+            </div>
+            <div class="sign-up">
+                회원가입
+            </div>
+            <div class="find">
+                아이디/비밀번호 찾기
+            </div>
+        </section>
+        </div>
+    </body>
+</html>
