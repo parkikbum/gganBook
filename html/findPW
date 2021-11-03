@@ -76,6 +76,7 @@
         <br>
         <form method="post">
             <input id="idInput" type="text" placeholder="아이디를 입력해 주세요">
+            <br>
             <input id="nickNameInput" type="text" placeholder="닉네임을 입력해 주세요">
             <br><br>
             <div class="formWrap"></div>
