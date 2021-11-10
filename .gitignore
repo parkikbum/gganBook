@@ -81,5 +81,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+servers/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,java
+/.metadata/
