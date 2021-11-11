@@ -78,17 +78,17 @@
 <body>
     <!-- 헤더부분 -->
     <div id="header">
-        <input type="image" src="images.logo.png">
+        <input type="image" src="./images.logo.png">
         <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
         <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-        <input type="image" src="images.profile.png" class="profile">
+        <input type="image" src="./images.profile.png" class="profile">
         <p class="userName">김김지지호호</p>
     </div>
 
     <!-- 뷰 부분 -->
     <div class="mainContainer">
         <div class="iconWrap">
-            <img src="images.icon.PNG">
+            <img src="./images.icon.PNG">
         </div>
         <br>
         <form method="post">
