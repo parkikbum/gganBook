@@ -6,66 +6,9 @@
 <head>
     <title>findID</title> 
     <link rel="stylesheet" href="Header.css" type="text/css">
+    <link rel="stylesheet" href="findID.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
-    <style type="text/css">
-        select {
-            width: 117px;
-            height: 30px;
-            margin: 5px;
-            border: 1px solid gainsboro;
-            border-radius: 5px;
-        }
-
-        .mainContainer {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20em;
-        }
-
-        .iconWrap {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .formWrap {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .buttonWrap {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #idInput {
-            width: 250px;
-            height: 40px;
-            margin: 5px;
-            border: 1px solid gainsboro;
-            border-radius: 5px;
-        }
-
-        #btnFindID {
-            position: relative;
-            width: 120px;
-            height: 35px;
-            border-radius: 5px;
-            font-size: small;
-            background-color: #3498DB;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -84,8 +27,8 @@
             <img src="./images/icon.PNG">
         </div>
         <br>
-        <form method="post">
-            <input id="idInput" type="text" placeholder="닉네임을 입력해 주세요">
+        <form method="post" action="findID_result1.jsp">
+            <input id="nickNameInput" name="nickName" type="text" placeholder="닉네임을 입력해 주세요">
             <br><br>
             <div class="formWrap"></div>
             <select name="residence">
@@ -111,16 +54,16 @@
                 <option value="buddhist">불교대학</option>
                 <option value="liberalArts">문과대학</option>
                 <option value="science">이과대학</option>
-                <option value="law ">법과대학</option>
+                <option value="law">법과대학</option>
                 <option value="socialSciences">사회과학대학</option>
-                <option value="policeJudicial ">경찰사법대학</option>
-                <option value="business ">경영대학</option>
+                <option value="policeJudicial">경찰사법대학</option>
+                <option value="business">경영대학</option>
                 <option value="biosystems">바이오시스템대학</option>
                 <option value="engineering">공과대학</option>
                 <option value="education">사범대학</option>
                 <option value="arts">예술대학</option>
                 <option value="pharmacy">약학대학</option>
-                <option value="futureConvergence ">미래융합대학</option>
+                <option value="futureConvergence">미래융합대학</option>
             </select>
             <div class="buttonWrap">
                 <input id="btnFindID" type="submit" value="아이디 찾기">

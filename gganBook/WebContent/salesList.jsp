@@ -6,69 +6,9 @@
 <head>
     <title>salesList</title>
     <link rel="stylesheet" href="Header.css" type="text/css">
+    <link rel="stylesheet" href="salesList.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
-    <style type="text/css">
-        h4{
-            color: red;
-            font-weight: bold;
-        }
-
-        .mainContainer {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10em;
-        }
-
-        .resultContainer {
-            width: 650px;
-            height: 450px;
-            background-color: rgb(244, 247, 250);
-            margin-top: 30px;
-            padding: 30px;
-        }
-
-        .txtAreaWrap {
-            display: flex;
-            flex-direction: row;
-            width: 645px;
-            height: 175px;
-            position: relative;
-            top: 50px;
-        }
-
-        .txtArea {
-            width: 645px;
-            height: 50px;
-            position: relative;
-            top: -90px;
-        }
-
-        #image {
-            width: 50%;
-            height: 50%;
-            position: relative;
-            left: 175px;
-            top: 30px;
-        }
-
-        #isSold {
-            width: 150px;
-            height: 35px;
-            position: relative;
-            left:30px;
-            top:18px;
-            border:0px;
-            outline: 0px;
-            border-radius: 20px;
-            font-size: medium;
-            color:white;
-            text-align: center;
-            background-color: #13A085;
-        }
-    </style>
 </head>
 
 <body>
