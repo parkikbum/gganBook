@@ -1,0 +1,56 @@
+select {
+    width: 117px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.mainContainer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20em;
+}
+
+.iconWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttonWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#idInput {
+    width: 250px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+#btnFindID {
+    position: relative;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: small;
+    background-color: #3498DB;
+    color: white;
+    margin-top: 20px;
+}
