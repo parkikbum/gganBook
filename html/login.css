@@ -1,0 +1,40 @@
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px
+}
+.login-input-section-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px
+}
+#inputId{
+    width: 250px;
+    height: 40px;
+    margin: 5px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+#inputPassword{
+    width: 250px;
+    height: 40px;
+    margin: 5px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+#btnLogin{
+    width: 120px;
+    height: 35px;
+    font-size: large;
+    margin-top: 10px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+.sign-up{
+   margin-top: 10px;
+}
