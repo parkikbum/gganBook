@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>메인</title>
-        <style>
-            .main-container{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 250px
+        <link rel="stylesheet" href="Header.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+     <style>
+            header{
+                height: 50px;
+                margin-bottom: 50px;
+            }
+            main{ 
+                height: auto;
+                text-align: center;
             }
             .recommmend-wrap{
                 width: 100%;
@@ -18,12 +21,28 @@
                 align-items: center;
                 margin-top: 10px
             }
-            .recommend-body-wrap{
+            .recommend-body-wrap1,.recommend-body-wrap2,.recommend-body-wrap3,.recommend-body-wrap4,.recommend-body-wrap5{
                 width: 650px;
                 height: 450px;
+                position: relative;
                 background-color: rgb(244, 247, 250);
-                margin-top: 30px;
+                margin-top: 50px;
                 padding: 30px;
+            }
+
+            .container1{
+                text-align: left;
+            }
+            .container2,.container3,.container4,.container5{
+                position: relative;
+                left: -30px;
+                text-align: left;
+            }
+
+            .recommend-header-wrap1,.recommend-header-wrap2{
+               text-align: center;
+               margin-bottom: 30px;
+               display: inline-block;
             }
             .sort{
                 width: 100px;
@@ -31,6 +50,8 @@
                 border-radius: 5px;
                 border: 1px solid gainsboro;
             }
+            ul, li {list-style:none;}
+
             h1{
                 display: inline;
                 margin-right: 30px;
@@ -39,68 +60,202 @@
             h2{
                 display: inline;
                 margin-right: 30px;
+                text-align: left;
             }
-            #booksample{
+            
+            #booksample1,#booksample2,#booksample3,#booksample4,#booksample5{
                 width: 30%;
-                display:block; 
+                display:inline-block; 
                 margin:auto;
+                position: relative;
+                left: 200px;
             }
-            #price{
+        
+            #profile_icon1,#profile_icon2,#profile_icon3,#profile_icon4,#profile_icon5{
+                position: relative;
+                top: 5px;
+            }
+
+            #price1,#price2,#price3,#price4,#price5{
                 color: red;
                 margin-top: 10px;
                 font-weight: bold;
             }
-            #profileName{
+            #profileName1, #profileName2, #profileName3, #profileName4, #profileName5{
                 display: inline;
                 font-weight: bold;
+                margin-bottom: 30px;
             }
-            #mainText{
+            #mainText1,#mainText2,#mainText3,#mainText4,#mainText5{
+                text-align: left;
                 margin-top: 10px;
             }
-            #leftbutton{
-                position: absolute;
-                left:150px;
-                top:550px;
+            #sell_icon1,#sell_icon2,#sell_icon3,#sell_icon4,#sell_icon5{
+                position: relative;
+                top: 3px;
+                left: -5px;
             }
-            #rightbutton{
-                position: absolute;
-                right:150px;
-                top:550px;
-            }
-            #numberbar{
-                position: absolute;
-                left: 600px;
-                top:900px;     
-            }
-            
-        </style>
+
+
+
+            .slidebox {max-width:600px;margin:auto; position:relative;}
+            .slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+            .slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
+            .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+            .slidebox .slidelist .slideitem > a img {max-width:60%; position: relative; left: -20px;}
+
+            .slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+            .slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('leftbutton.PNG') center center / 50% no-repeat;}
+            .slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('rightbutton.PNG') center center / 50% no-repeat;}
+
+            [name="slide"] {display:none;}
+            #slide01:checked ~ .slidelist .slideitem {left:0;}
+            #slide02:checked ~ .slidelist .slideitem {left:-100%;}
+            #slide03:checked ~ .slidelist .slideitem {left:-200%;}
+            #slide04:checked ~ .slidelist .slideitem {left:-300%;}
+
+            .slide-control [class*="control"] {display:none;}
+            #slide01:checked ~ .slide-control .control01 {display:block;}
+            #slide02:checked ~ .slide-control .control02 {display:block;}
+            #slide03:checked ~ .slide-control .control03 {display:block;}
+            #slide04:checked ~ .slide-control .control04 {display:block;}
+
+        </style>           
     </head>
     <body>
-        <header></header>          
-        <div class="main-container">
-            <div class="recommmend-wrap">
-                <div class="recommend-header-wrap">
-                    <h1>김김지지호호님이 관심을 가질 것 같아요</h1>
-                    <select class="sort">
-                        <option>최신순</option>
-                        <option>인기순</option>
-                    </select>
-                 </div>
-                 <div class="recommend-body-wrap">
-                     <img src="profile_icon.PNG">
-                     <div id="profileName">문덩덩<div>
-                     <img src="booksample.jpg" id="booksample"><br>
-                     <h2 id="title">파이썬 웹프로그래밍 책 팝니다</h2>
-                     <img src="sell_icon.PNG">
-                     <div id="price">20,000원</div>
-                     <div id="mainText">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
-                         상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
-                 </div>
-                 <img id="leftbutton" src="leftbutton.PNG">
-                 <img id="rightbutton" src="rightbutton.PNG">
-                 <img id="numberbar" src="numberbar.PNG">
+        <!--헤더 부분-->
+        <header>
+            <div id="header"> 
+                <input type="image" src="logo.png">  
+                <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요">
+                <button type="submit", class="searchButton";> <i class="fa fa-search"></i> </button>
+                <input type="image" src="profile.png" class = "profile">
+                <p class="userName">김김지지호호</p>
+            </div>   
+        </header>  
+
+        <main>
+            <div class="recommend-header-wrap1">
+                <h1>[김김지지호호님이 관심을 가질 것 같아요]</h1>
             </div>
-        </div>
-       
+
+            <!--슬라이더 부분-->
+            <div class="slidebox">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <a><img src="booksample.jpg"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="booksample.jpg"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="booksample.jpg"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="booksample.jpg"></a>
+                    </li>
+                    
+                </ul>
+                <div class="slide-control">
+                    <div class="control01">
+                        <label for="slide04" class="prev"></label>
+                        <label for="slide02" class="next"></label>
+                    </div>
+                    <div class="control02">
+                        <label for="slide01" class="prev"></label>
+                        <label for="slide03" class="next"></label>
+                    </div>
+                    <div class="control03">
+                        <label for="slide02" class="prev"></label>
+                        <label for="slide04" class="next"></label>
+                    </div>
+                    <div class="control04">
+                        <label for="slide03" class="prev"></label>
+                        <label for="slide01" class="next"></label>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <!--그냥 추천-->
+            <div class="main-container">
+                <div class="recommmend-wrap">
+                    <div class="recommend-header-wrap2">
+                        <h1>[이런 책도 있어요]</h1>
+                        <select class="sort">
+                            <option>최신순</option>
+                            <option>인기순</option>
+                        </select>
+                    </div>
+                    <div class="container1">
+                        <div class="recommend-body-wrap1">
+                            <img src="profile_icon.PNG" id="profile_icon1">
+                            <div id="profileName1">문덩덩<div>
+                            <img src="booksample.jpg" id="booksample1"><br>
+                            <h2 id="title1">파이썬 웹프로그래밍 책 팝니다</h2>
+                            <img src="sell_icon.PNG" id="sell_icon1">
+                            <div id="price1">20,000원</div>
+                            <div id="mainText1">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
+                                상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
+                        </div><br><br>
+                    </div>
+
+                    <div class="container2">
+                        <div class="recommend-body-wrap2">
+                            <img src="profile_icon.PNG" id="profile_icon2">
+                            <div id="profileName2">문덩덩<div>
+                            <img src="booksample.jpg" id="booksample2"><br>
+                            <h2 id="title2">파이썬 웹프로그래밍 책 팝니다</h2>
+                            <img src="sell_icon.PNG" id="sell_icon2">
+                            <div id="price2">20,000원</div>
+                            <div id="mainText2">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
+                                상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
+                        </div><br><br>
+                    </div>
+
+                    <div class="container3">
+                        <div class="recommend-body-wrap3">
+                            <img src="profile_icon.PNG" id="profile_icon3">
+                            <div id="profileName3">문덩덩<div>
+                            <img src="booksample.jpg" id="booksample3"><br>
+                            <h2 id="title3">파이썬 웹프로그래밍 책 팝니다</h2>
+                            <img src="sell_icon.PNG" id="sell_icon3">
+                            <div id="price3">20,000원</div>
+                            <div id="mainText3">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
+                                상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
+                        </div><br><br>
+                    </div>
+
+                    <div class="container4">
+                        <div class="recommend-body-wrap4">
+                            <img src="profile_icon.PNG" id="profile_icon4">
+                            <div id="profileName4">문덩덩<div>
+                            <img src="booksample.jpg" id="booksample4"><br>
+                            <h2 id="title4">파이썬 웹프로그래밍 책 팝니다</h2>
+                            <img src="sell_icon.PNG" id="sell_icon4">
+                            <div id="price4">20,000원</div>
+                            <div id="mainText4">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
+                                상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
+                        </div><br><br>
+                    </div>
+
+                    <div class="container5">
+                        <div class="recommend-body-wrap5">
+                            <img src="profile_icon.PNG" id="profile_icon5">
+                            <div id="profileName5">문덩덩<div>
+                            <img src="booksample.jpg" id="booksample4"><br>
+                            <h2 id="title5">파이썬 웹프로그래밍 책 팝니다</h2>
+                            <img src="sell_icon.PNG" id="sell_icon5">
+                            <div id="price5">20,000원</div>
+                            <div id="mainText5">OOO교수님 수업 들었는데, 필기도 다해놨고 책 깔끔하게 써서 정말 좋은
+                                상태입니다. 동대입구 3번출구 앞 직거래 합니다. 010-5555-5555 연락주세요.</div>
+                        </div><br><br>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
