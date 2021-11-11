@@ -1,0 +1,113 @@
+header{
+    height: 50px;
+    margin-bottom: 50px;
+}
+main{ 
+    height: auto;
+    text-align: center;
+}
+.recommmend-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px
+}
+.recommend-body-wrap1,.recommend-body-wrap2,.recommend-body-wrap3,.recommend-body-wrap4,.recommend-body-wrap5{
+    width: 650px;
+    height: 450px;
+    position: relative;
+    background-color: rgb(244, 247, 250);
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.container1{
+    text-align: left;
+}
+.container2,.container3,.container4,.container5{
+    position: relative;
+    left: -30px;
+    text-align: left;
+}
+
+.recommend-header-wrap1,.recommend-header-wrap2{
+   text-align: center;
+   margin-bottom: 30px;
+   display: inline-block;
+}
+.sort{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+ul, li {list-style:none;}
+
+h1{
+    display: inline;
+    margin-right: 30px;
+}
+
+h2{
+    display: inline;
+    margin-right: 30px;
+    text-align: left;
+}
+
+#booksample1,#booksample2,#booksample3,#booksample4,#booksample5{
+    width: 30%;
+    display:inline-block; 
+    margin:auto;
+    position: relative;
+    left: 200px;
+}
+
+#profile_icon1,#profile_icon2,#profile_icon3,#profile_icon4,#profile_icon5{
+    position: relative;
+    top: 5px;
+}
+
+#price1,#price2,#price3,#price4,#price5{
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#profileName1, #profileName2, #profileName3, #profileName4, #profileName5{
+    display: inline;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+#mainText1,#mainText2,#mainText3,#mainText4,#mainText5{
+    text-align: left;
+    margin-top: 10px;
+}
+#sell_icon1,#sell_icon2,#sell_icon3,#sell_icon4,#sell_icon5{
+    position: relative;
+    top: 3px;
+    left: -5px;
+}
+
+
+
+.slidebox {max-width:600px;margin:auto; position:relative;}
+.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:60%; position: relative; left: -20px;}
+
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('./images/leftbutton.PNG') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('./images/rightbutton.PNG') center center / 50% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+#slide04:checked ~ .slidelist .slideitem {left:-300%;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
