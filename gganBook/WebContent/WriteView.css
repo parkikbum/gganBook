@@ -1,0 +1,77 @@
+.title{
+    position: absolute;
+    left: 20%;
+    right: 30%;
+    top: 100px;
+    text-align: center;
+}
+.textInput{
+    position: absolute;
+    top: 170px;
+    left: 30%;
+    width: 300px;
+    height: 30px;
+}
+.image1{
+    position: absolute;
+    top: 230px;
+    left: 30%;
+    width: 90px;
+    height: 90px;
+}
+.image2{
+    position: absolute;
+    top: 230px;
+    left: 35%;
+    width: 90px;
+    height: 90px;
+}
+.image3{
+    position: absolute;
+    top: 230px;
+    left: 40%;
+    width: 90px;
+    height: 90px;
+}
+.image4{
+    position: absolute;
+    top: 230px;
+    left: 45%;
+    width: 90px;
+    height: 90px;
+}
+.location-select{
+    position: absolute;
+    left: 40%;
+    top: 330px;
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.college-select{
+    position: absolute;
+    left: 29%;
+    top: 330px;
+    margin-left: 10px;
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.explainText{
+    position: absolute;
+    left: 30%;
+    top: 400px;
+    width: 400px;
+    height: 200px;
+}
+.submitButton{
+    position: absolute;
+    left: 46%;
+    top: 630px;
+    width: 90px;
+    height: 30px;
+    background-color: cornflowerblue;
+    color: white;
+}
