@@ -1,7 +1,11 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>findID</title>
+    <link rel="stylesheet" href="Header.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
     <style type="text/css">
         select {
             width: 117px;
@@ -12,6 +16,7 @@
         }
 
         .mainContainer {
+            position: absolute;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -49,18 +54,29 @@
         }
 
         #btnFindID {
+            position: relative;
             width: 120px;
             height: 35px;
             border-radius: 5px;
             font-size: small;
             background-color: #3498DB;
-            color: white;  
-            margin-top: 20px;          
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
+    <!-- 헤더부분 -->
+    <div id="header">
+        <input type="image" src="logo.png">
+        <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
+        <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
+        <input type="image" src="profile.png" class="profile">
+        <p class="userName">김김지지호호</p>
+    </div>
+        
+    <!-- 뷰 부분 -->
     <div class="mainContainer">
         <div class="iconWrap">
             <img src="icon.PNG">
@@ -104,13 +120,11 @@
                 <option value="pharmacy">약학대학</option>
                 <option value="futureConvergence ">미래융합대학</option>
             </select>
-    </div>
-    <div class="buttonWrap">
-        <input id="btnFindID" type="submit" value="아이디 찾기">
+            <div class="buttonWrap">
+                <input id="btnFindID" type="submit" value="아이디 찾기">
+            </div>
     </div>
     </form>
-    </div>
-
 </body>
 
 </html>
