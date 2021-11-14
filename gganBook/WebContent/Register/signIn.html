@@ -11,30 +11,30 @@
                     <img src="./images/logo2.PNG" id="logo2">
                 </div>
             </header>
-            <form action="chkLogin.jsp" method="post">
+            <form action="signIn.jsp" method="post">
 	            <section class="imformation-section-wrap">
 	                <div class="nickname-input-wrap">
-	                    <input placeholder="닉네임을 입력해주세요" id="nickname" type="text">
+	                    <input placeholder="닉네임을 입력해주세요" id="nickName" name="nickName" type="text">
 	                </div>
 	                <div class="id-input-wrap">
-	                    <input placeholder="아이디를 입력해주세요" id="id" type="text">
+	                    <input placeholder="아이디를 입력해주세요" id="userID" name = "userID" type="text">
 	                </div>
 	                <div class="password-input-wrap">
-	                    <input placeholder="비밀번호를 입력해주세요" id="password" type="password">
+	                    <input placeholder="비밀번호를 입력해주세요" id="userPassword" name = "userPassword" type="password">
 	                </div>
 	                <div class="check-password-input-wrap">
-	                    <input placeholder="비밀번호를 확인해주세요" id="checkPassword" type="password">
+	                    <input placeholder="비밀번호를 확인해주세요" id="checkPassword" name="checkPassword" type="password">
 	                </div> 
 	                <div class="additional-imformation-wrap">
-	                    <select class="location-select">
+	                    <select name="userLocation" class="location-select">
 	                        <option selected="selected">거주지역</option>
-	                        <option>경기도</option>
-	                        <option>서울시</option>
+	                        <option value="gyeongi">경기도</option>
+	                        <option value="seoul">서울시</option>
 	                    </select>
-	                    <select class="college-select">
+	                    <select name="userUniv" class="college-select">
 	                        <option selected="selected">단과대학</option>
-	                        <option>불교대학</option>
-	                        <option>문과대학</option>
+	                        <option value="bulgyo">불교대학</option>
+	                        <option value="moongwa">문과대학</option>
 	                        <option>이과대학</option>
 	                        <option>법과대학</option>
 	                        <option>사회과학대학</option>

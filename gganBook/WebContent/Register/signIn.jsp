@@ -1,62 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<jsp:useBean id="user" class="user.user" scope="page"/>
+<jsp:setProperty name="user" property="userID"/>
+<jsp:setProperty name="user" property="userPassword"/>
+<jsp:setProperty name="user" property="nickName"/>
+<jsp:setProperty name="user" property="userUniv"/>
+<jsp:setProperty name="user" property="userLocation"/>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>È¸¿ø°¡ÀÔÆû</title>
-        <link rel="stylesheet" href="signIn.css"> 
     </head>
-        <div class="main-container">
-            <header>
-                <div class="logo-wrap">
-                    <img src="./images/logo2.PNG" id="logo2">
-                </div>
-            </header>
-            <form action="chkLogin.jsp" method="post">
-	            <section class="imformation-section-wrap">
-	                <div class="nickname-input-wrap">
-	                    <input placeholder="´Ğ³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä" id="nickname" type="text">
-	                </div>
-	                <div class="id-input-wrap">
-	                    <input placeholder="¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" id="id" type="text">
-	                </div>
-	                <div class="password-input-wrap">
-	                    <input placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" id="password" type="password">
-	                </div>
-	                <div class="check-password-input-wrap">
-	                    <input placeholder="ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä" id="checkPassword" type="password">
-	                </div> 
-	                <div class="additional-imformation-wrap">
-	                    <select class="location-select">
-	                        <option selected="selected">°ÅÁÖÁö¿ª</option>
-	                        <option>°æ±âµµ</option>
-	                        <option>¼­¿ï½Ã</option>
-	                    </select>
-	                    <select class="college-select">
-	                        <option selected="selected">´Ü°ú´ëÇĞ</option>
-	                        <option>ºÒ±³´ëÇĞ</option>
-	                        <option>¹®°ú´ëÇĞ</option>
-	                        <option>ÀÌ°ú´ëÇĞ</option>
-	                        <option>¹ı°ú´ëÇĞ</option>
-	                        <option>»çÈ¸°úÇĞ´ëÇĞ</option>
-	                        <option>°æÂû»ç¹ı´ëÇĞ</option>
-	                        <option>°æ¿µ´ëÇĞ</option>
-	                        <option>¹ÙÀÌ¿À½Ã½ºÅÛ´ëÇĞ</option>
-	                        <option>°ø°ú´ëÇĞ</option>
-	                        <option>»ç¹ü´ëÇĞ</option>
-	                        <option>¿¹¼ú´ëÇĞ</option>
-	                        <option>¾àÇĞ´ëÇĞ</option>
-	                        <option>¹Ì·¡À¶ÇÕ´ëÇĞ</option>
-	                        <option>AIÀ¶ÇÕÇĞºÎ</option>
-	                        <option>¿¬°èÁ¤º¸</option>
-	                    </select>
-                 </form>
-                </div>  
-                <input id="btnsubmit" value="È¸¿ø°¡ÀÔ" type="submit">
-            </section>
-        </div>
     <body>
+    <%
+    
+    System.out.println(user.getuserID() +  user.getuserPassword() + user.getNickname() + user.getuserUniv() +  user.getuserLocation());
+		if(user.getuserID() == null || user.getuserPassword() == null || user.getNickname() == null || user.getuserUniv() == null || user.getuserLocation() == null){		
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('ëª¨ë‘ ì…ë ¥ì´ ë˜ì—ˆëŠ”ì§€ í™•ì¸í•´ ì£¼ì„¸ìš”')");
+			script.println("history.back()");
+			script.println("</script>");
+		} else{
+			UserDAO userDAO = new UserDAO();
+			int result = userDAO.join(user);
+			if(result == -1){
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('ì•„ì´ë””ê°€ ì´ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤.')");
+				script.println("history.back()");
+				script.println("</script>");
+			}else{
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('ë¡œê·¸ì¸ ì„±ê³µ')");
+				script.println("location.href='login.html'");
+				script.println("</script>");
+			}
+			
+		}
+    
+    
+    %>
 
     </body>
 </html>
