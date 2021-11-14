@@ -15,9 +15,9 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/gganbook?serverTimezone=UTC";
-			String dbID = "root";
-			String dbPassword = "0514";
+			String dbURL = "jdbc:mysql://database-1-user.coimq8nymisd.us-east-2.rds.amazonaws.com/gganbook";
+			String dbID = "admin";
+			String dbPassword = "12345678";
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
@@ -29,7 +29,7 @@ public class UserDAO {
 	}
 	
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM USER WHERE userID=?";
+		String SQL = "SELECT userPassword FROM user WHERE userID=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
@@ -48,7 +48,7 @@ public class UserDAO {
 	}
 	
 	public int join(user user) {
-		String SQL = "INSERT INTO USER VALUES(?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO user VALUES(?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getNickname());
