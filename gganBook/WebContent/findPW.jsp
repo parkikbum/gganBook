@@ -5,26 +5,15 @@
 
 <head>
     <title>findPW</title>
-    <link rel="stylesheet" href="Header.css" type="text/css">
     <link rel="stylesheet" href="findPW.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 </head>
 
 <body>
-    <!-- 헤더부분 -->
-    <div id="header">
-        <input type="image" src="./images/logo.png">
-        <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
-        <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-        <input type="image" src="./images/profile.png" class="profile">
-        <p class="userName">김김지지호호</p>
-    </div>
-
-    <!-- 뷰 부분 -->
     <div class="mainContainer">
         <div class="iconWrap">
-            <img src="./images/icon.PNG">
+            <img src="icon.PNG">
         </div>
         <br>
         <form method="post" action="findPW_result1.jsp">
