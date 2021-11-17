@@ -14,10 +14,10 @@
 <body>
     <!-- 헤더부분 -->
     <div id="header">
-        <input type="image" src="logo.png">
+        <input type="image" src="../images/logo.png">
         <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
         <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-        <input type="image" src="profile.png" class="profile">
+        <input type="image" src="../images/profile.png" class="profile">
         <p class="userName">김김지지호호</p>
     </div>
         
@@ -25,7 +25,7 @@
     <br>
     <div class="mainContainer">
         <div class="resultContainer">
-            <img src="booksample.jpg" id="image">
+            <img src="../images/booksample.jpg" id="image">
             <div class="txtAreaWrap">
                 <h2>파이썬 프로그래밍 책 팝니다.</h2>
                 <input id="isSold" value="판매완료">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="resultContainer">
-            <img src="booksample2.jpg" id="image">
+            <img src="../images/booksample2.jpg" id="image">
             <div class="txtAreaWrap">
                 <h2>Java의 정석 책 팝니다.</h2>
                 <input id="isSold" value="판매완료">

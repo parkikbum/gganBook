@@ -13,7 +13,7 @@
 <body>
     <div class="mainContainer">
         <div class="iconWrap">
-            <img src="icon.PNG">
+            <img src="../images/icon.PNG">
         </div>
         <br>
         <form method="post" action="findID_result1.jsp">
