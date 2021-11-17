@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>login</title>
+        <link rel="stylesheet" href="login.css" type="text/css">
+    </head>
+    <body>
+        <div class="main-container">
+        <header>
+            <div class="logo-wrap">
+                <img src="login_mainlogo.PNG">
+            </div>
+        </header>
+         <form action="loginAction.jsp" action="post">
+	        <section class="login-input-section-wrap">
+	                <input placeholder="Username" type="text" id="inputId" name="userID"></input>
+	                <input placeholder="password" type="password" id="inputPassword" name="userPassword"></input>
+	                <input type="submit" id="btnLogin" value="로그인">
+	        <div class="sign-up" style="cursor:pointer;" onclick="location.href='signIn.html';">
+	                회원가입
+	        </div>
+	        <div class="findID" style="cursor:pointer;" onclick="location.href='findID.html';">
+	                아이디 찾기
+	        </div>
+	        <div class="findPW" style="cursor:pointer;" onclick="location.href='findPW.html';">
+	               비밀번호 찾기
+	        </div>
+	        </section>
+        </form>
+        
+        </div>
+    </body>
+</html>
