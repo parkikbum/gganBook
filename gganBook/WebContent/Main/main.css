@@ -2,7 +2,7 @@ header{
     height: 50px;
     margin-bottom: 50px;
 }
-main{ 
+#main{ 
     height: auto;
     text-align: center;
 }
@@ -24,10 +24,11 @@ main{
 
 .container1{
     text-align: left;
+    position: relative;
+
 }
 .container2,.container3,.container4,.container5{
     position: relative;
-    left: -30px;
     text-align: left;
 }
 
@@ -60,7 +61,8 @@ h2{
     display:inline-block; 
     margin:auto;
     position: relative;
-    left: 200px;
+    left: 150px;
+    top: -20px
 }
 
 #profile_icon1,#profile_icon2,#profile_icon3,#profile_icon4,#profile_icon5{
@@ -97,8 +99,8 @@ h2{
 .slidebox .slidelist .slideitem > a img {max-width:60%; position: relative; left: -20px;}
 
 .slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
-.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('./images/leftbutton.PNG') center center / 50% no-repeat;}
-.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('./images/rightbutton.PNG') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('../images/leftbutton.PNG') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('../images/rightbutton.PNG') center center / 50% no-repeat;}
 
 [name="slide"] {display:none;}
 #slide01:checked ~ .slidelist .slideitem {left:0;}
