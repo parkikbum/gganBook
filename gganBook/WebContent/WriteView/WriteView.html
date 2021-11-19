@@ -10,14 +10,15 @@
     <body>
         <div id="header"> 
             <input type="image" src="../images/logo.png">  
-            <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요">
+            <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요"">
             <button type="submit", class="searchButton";> <i class="fa fa-search"></i> </button>
             <input type="image" src="../images/profile.png" class = "profile">
             <p class="userName">김김지지호호</p>
-        </div>            
+        </div>
+        <form action="writeAction.jsp" method="post" >            
         <h2 class="title">내 책을 깐부들에게 판매 해봐요</h2>
         <div>
-            <input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요">
+            <input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요" name="boardTitle">
             <input type="image" class="image1" src="../images/booksample.jpg">
             <input type="image" class="image2" src="../images/booksample.jpg">
             <input type="image" class="image3" src="../images/booksample.jpg">
@@ -46,8 +47,8 @@
                 <option>연계정보</option>
             </select>
 
-            <form>
-                <p><textarea cols="40" rows="10" class="explainText"></textarea></p>
+            
+                <p><textarea cols="40" rows="10" class="explainText" name="boardContent"></textarea></p>
                 <input type="submit" class="submitButton" value="판매글 올리기">
             </form>
         </div>
