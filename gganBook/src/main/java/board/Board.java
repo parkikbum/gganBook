@@ -8,7 +8,9 @@ public class Board {
 	private String boardDate;
 	private String boardContent;
 	private int boardAvailable;
-	//private String boardImage;
+	private String boardImage;
+	private String boardUniv;
+	private String boardLocation;
 	
 	
 	public int getBoardID() {
@@ -48,10 +50,22 @@ public class Board {
 	public void setBoardAvailable(int boardAvailable) {
 		this.boardAvailable = boardAvailable;
 	}
-	//public String getBoardImage() {
-	//	return boardImage;
-	//}
-	//public void setBoardImage(String boardImage) {
-	//	this.boardImage = boardImage;
-	//}
+	public String getBoardImage() {
+		return boardImage;
+	}
+	public void setBoardImage(String boardImage) {
+		this.boardImage = boardImage;
+	}
+	public String getBoardUniv() {
+		return boardUniv;
+	}
+	public void setBoardUniv(String boardUniv) {
+		this.boardUniv = boardUniv;
+	}
+	public String getBoardLocation() {
+		return boardLocation;
+	}
+	public void setBoardLocation(String boardLocation) {
+		this.boardLocation = boardLocation;
+	}
 }

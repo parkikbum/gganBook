@@ -57,8 +57,8 @@ public class BoardDAO {
 		return -1; //db¿À·ù
 	}
 	
-	public int write(String boardTitle, String userID, String boardContent) {
-		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?)";
+	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage) {
+		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -68,7 +68,9 @@ public class BoardDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, boardContent);
 			pstmt.setInt(6, 1);
-			pstmt.setString(7, "dummy");
+			pstmt.setString(7, boardImage);
+			pstmt.setString(8, boardUniv);
+			pstmt.setString(9, boardLocation);
 			return pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
