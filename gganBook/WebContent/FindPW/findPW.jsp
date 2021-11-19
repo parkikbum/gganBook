@@ -23,22 +23,21 @@
             <br><br>
             <div class="formWrap"></div>
             <select name="residence">
-                <option hidden>거주지역</option>
                 <option value="seoul">서울특별시</option>
                 <option value="busan">부산광역시</option>
-                <option value="daejeon">대전광역시</option>
-                <option value="incheon">인천광역시</option>
-                <option value="daegu">대구광역시</option>
-                <option value="gwangju">광주광역시</option>
-                <option value="gyeonggi">경기도</option>
-                <option value="gangwon">강원도</option>
-                <option value="chungcheongbuk">충청북도</option>
-                <option value="chungcheongnam">충청남도</option>
-                <option value="jeollabuk">전라북도</option>
-                <option value="jeollanam">전라남도</option>
-                <option value="gyeongsangbuk">경상북도</option>
-                <option value="gyeongsangnam">경상남도</option>
-                <option value="jeju">제주특별자치도</option>
+          		<option value="daejeon">대전광역시</option>
+	            <option value="incheon">인천광역시</option>
+			    <option value="daegu">대구광역시</option>
+			    <option value="gwangju">광주광역시</option>
+			    <option value="gyeonggi">경기도</option>
+			    <option value="gangwon">강원도</option>
+			    <option value="chungbuk">충청북도</option>
+			    <option value="chungnam">충청남도</option>
+			    <option value="jeonbuk">전라북도</option>
+			    <option value="jeonnam">전라남도</option>
+			    <option value="gyeongbuk">경상북도</option>
+			    <option value="gyeongnam">경상남도</option>
+			    <option value="jeju">제주특별자치도</option>
             </select>
             <select name="college">
                 <option hidden>단과대학</option>
