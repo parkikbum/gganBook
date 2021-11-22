@@ -6,6 +6,7 @@ header{
     height: auto;
     text-align: center;
 }
+
 .recommmend-wrap{
     width: 100%;
     display: flex;
@@ -89,7 +90,15 @@ h2{
     top: 3px;
     left: -5px;
 }
-
+@font-face {
+    font-family: 'BinggraeMelona';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'BinggraeMelona';
+}
 
 
 .slidebox {max-width:600px;margin:auto; position:relative;}

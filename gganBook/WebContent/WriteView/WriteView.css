@@ -13,18 +13,18 @@
     height: 30px;
 }
 .image1{
-    position: absolute;
+    position: relative;
     top: 230px;
-    left: 30%;
-    width: 90px;
-    height: 90px;
+    left: 200px;
+    width: 400px;
+    height: 30px;
 }
 .image2{
-    position: absolute;
+    position: relative;
     top: 230px;
-    left: 35%;
-    width: 90px;
-    height: 90px;
+    left: -300px;
+    width: 100px;
+    height: 30px;
 }
 .image3{
     position: absolute;
@@ -74,4 +74,9 @@
     height: 30px;
     background-color: cornflowerblue;
     color: white;
+}
+.valueInput{
+	position: relaitve;
+	width: 100px;
+	height: 40px;
 }
