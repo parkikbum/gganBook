@@ -9,6 +9,8 @@
 <jsp:setProperty name="board" property="boardContent" />
 <jsp:setProperty name="board" property="boardUniv"/>
 <jsp:setProperty name="board" property="boardLocation"/>
+<jsp:setProperty name="board" property="boardPrice"/>
+
 
 
 
@@ -41,7 +43,7 @@
 				script.println("</script>");
 			} else{
 				BoardDAO boardDAO = new BoardDAO();
-				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"));
+				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"), board.getBoardPrice());
 				
 				if(result == -1){
 					PrintWriter script = response.getWriter();
@@ -54,7 +56,7 @@
 					System.out.println(board.getBoardImage() + board.getBoardContent());
 					script.println("<script>");
 					script.println("alert('글쓰기 성공!')");
-					script.println("location.href='../Main/main.html'");
+					script.println("location.href='../Main/main.jsp'");
 					script.println("</script>");
 				}
 			}

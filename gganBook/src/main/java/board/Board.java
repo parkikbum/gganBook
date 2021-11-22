@@ -11,6 +11,7 @@ public class Board {
 	private String boardImage;
 	private String boardUniv;
 	private String boardLocation;
+	private String boardPrice;
 	
 	
 	public int getBoardID() {
@@ -67,5 +68,11 @@ public class Board {
 	}
 	public void setBoardLocation(String boardLocation) {
 		this.boardLocation = boardLocation;
+	}
+	public String getBoardPrice() {
+		return boardPrice;
+	}
+	public void setBoardPrice(String boardPrice) {
+		this.boardPrice = boardPrice;
 	}
 }

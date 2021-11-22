@@ -1,6 +1,7 @@
 package board;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -57,8 +58,8 @@ public class BoardDAO {
 		return -1; //db오류
 	}
 	
-	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage) {
-		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice) {
+		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -71,11 +72,64 @@ public class BoardDAO {
 			pstmt.setString(7, boardImage);
 			pstmt.setString(8, boardUniv);
 			pstmt.setString(9, boardLocation);
+			pstmt.setString(10, boardPrice);
 			return pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return -1; // db오류
+	}
+	
+	public ArrayList<Board> getList(int pageNumber){
+		//특정한 숫자보다 작은것.
+		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 ORDER BY boardID DESC LIMIT 5";
+		ArrayList<Board> list = new ArrayList<Board>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setInt(1, getNext() - (pageNumber -1) * 10);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				board.setBoardID(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setUserID(rs.getString(3));
+				board.setBoardDate(rs.getString(4));
+				board.setBoardContent(rs.getString(5));
+				board.setBoardAvailable(rs.getInt(6));
+				board.setBoardImage(rs.getString(7));
+				board.setBoardUniv(rs.getString(8));
+				board.setBoardLocation(rs.getString(9));
+				board.setBoardPrice(rs.getString(10));
+				list.add(board);
+				System.out.println(rs.getString(2));
+
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public boolean nextPage(int pageNumber) {
+		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 ORDER BY boardID DESC LIMIT 5";
+		ArrayList<Board> list = new ArrayList<Board>();
+		try {
+PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setInt(1, getNext() - (pageNumber -1) * 5);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				return true;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 

@@ -75,3 +75,8 @@
     background-color: cornflowerblue;
     color: white;
 }
+.valueInput{
+	position: relaitve;
+	width: 100px;
+	height: 40px;
+}
