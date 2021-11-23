@@ -109,6 +109,14 @@
 				
 	
 %>
+
+
+                <%
+                
+                BoardDAO boardDAO = new BoardDAO();
+        		ArrayList<Board> list = boardDAO.getList(pageNumber);
+                
+                %>
             <!--슬라이더 부분-->
             <div class="slidebox">
                 <input type="radio" name="slide" id="slide01" checked>
@@ -117,19 +125,20 @@
                 <input type="radio" name="slide" id="slide04">
                 <ul class="slidelist">
                     <li class="slideitem">
-                        <a><img src="<%= urlArray[0]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
                     </li>
                     <li class="slideitem">
-                        <a><img src="<%= urlArray[1]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID() %>"><img src="<%= urlArray[1]%>"></a>
                     </li>
                     <li class="slideitem">
-                        <a><img src="<%= urlArray[2]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID() %>"><img src="<%= urlArray[2]%>"></a>
                     </li>
                     <li class="slideitem">
-                        <a><img src="<%= urlArray[3]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID() %>"><img src="<%= urlArray[3]%>"></a>
                     </li>
                     
                 </ul>
+                
                 <div class="slide-control">
                     <div class="control01">
                         <label for="slide04" class="prev"></label>
@@ -161,11 +170,7 @@
                         </select>
                     </div>
                     
-                    <%
-                    
-                   				BoardDAO boardDAO = new BoardDAO();
-                        		ArrayList<Board> list = boardDAO.getList(pageNumber);
-                        		System.out.println("왜 안돼" + list.size());
+                    <%	
                         		for (int i = 0; i < list.size(); i++){
 
                     %>
