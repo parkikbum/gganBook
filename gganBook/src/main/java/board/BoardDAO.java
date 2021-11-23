@@ -132,6 +132,38 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 		return false;
 	}
 	
+	public Board getBoard(int boardID) {
+		
+		String SQL = "SELECT * FROM board WHERE boardID = ?";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, boardID);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				Board board = new Board();
+				board.setBoardID(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setUserID(rs.getString(3));
+				board.setBoardDate(rs.getString(4));
+				board.setBoardContent(rs.getString(5));
+				board.setBoardAvailable(rs.getInt(6));
+				board.setBoardImage(rs.getString(7));
+				board.setBoardUniv(rs.getString(8));
+				board.setBoardLocation(rs.getString(9));
+				board.setBoardPrice(rs.getString(10));
+				System.out.println(rs.getString(2));
+				return board;
+
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 
 	
 }
