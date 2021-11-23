@@ -171,6 +171,7 @@
                     %>
                     
                     <div class="container<%= i+1%>">
+                    <a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
                         <div class="recommend-body-wrap1">
                             <img src="../images/profile_icon.PNG" id="profile_icon1">
                             <div id="profileName1"><%= list.get(i).getUserID() %></div>
@@ -185,6 +186,7 @@
                             <div id="price1"><%= list.get(i).getBoardPrice() %></div>
                             <div id="mainText1"><%= list.get(i).getBoardContent() %></div>
                         </div><p><p>
+                        </a>
                     </div>
                     <%
                         		}
