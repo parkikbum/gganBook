@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import board.Board;
+
 
 public class UserDAO {
 	
@@ -61,6 +63,27 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	
+	public user userInfo(String userID) {
+		String SQL = "SELECT * FROM user WHERE userID = ?";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				user use = new user();
+				use.setuserLocation(rs.getString(4));
+				use.setuserUniv(rs.getString(5));
+				return use;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	

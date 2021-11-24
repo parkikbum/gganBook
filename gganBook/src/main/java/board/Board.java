@@ -75,4 +75,5 @@ public class Board {
 	public void setBoardPrice(String boardPrice) {
 		this.boardPrice = boardPrice;
 	}
+
 }
