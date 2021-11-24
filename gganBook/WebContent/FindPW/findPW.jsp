@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="user.user" %>
+<%@ page import="user.UserDAO" %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 
@@ -11,18 +16,20 @@
 </head>
 
 <body>
-    <div class="mainContainer">
+
+	
+	<div class="mainContainer">
         <div class="iconWrap">
             <img src="../images/icon.PNG">
         </div>
         <br>
-        <form method="post" action="findPW_result1.jsp">
-            <input id="idInput" name="id" type="text" placeholder="아이디를 입력해 주세요">
+        <form method="post" action="findPW_result2.jsp">
+            <input id="idInput" name="userID" type="text" placeholder="아이디를 입력해 주세요">
             <br>
-            <input id="nickNameInput" name="nickName" type="text" placeholder="닉네임을 입력해 주세요">
+            <input id="nickNameInput" name="nickName" type="text" placeholder="닉네임을 입력해 주세요" name="nickName">
             <br><br>
             <div class="formWrap"></div>
-            <select name="residence">
+            <select name="userLocation">
                 <option value="seoul">서울특별시</option>
                 <option value="busan">부산광역시</option>
           		<option value="daejeon">대전광역시</option>
@@ -39,7 +46,7 @@
 			    <option value="gyeongnam">경상남도</option>
 			    <option value="jeju">제주특별자치도</option>
             </select>
-            <select name="college">
+            <select name="userUniv">
                 <option hidden>단과대학</option>
                 <option value="buddhist">불교대학</option>
                 <option value="liberalArts">문과대학</option>

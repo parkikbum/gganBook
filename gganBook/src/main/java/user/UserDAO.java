@@ -85,7 +85,45 @@ public class UserDAO {
 		}
 		return null;
 	}
-
 	
+	public user findUserID(String nickName, String userUniv, String userLocation) {
+				String SQL = "select userID,nickName from user where nickName = '" + nickName + "' and userLocation = '"+ userLocation +"' and userUniv ='"+ userUniv +"'";
+		System.out.print(nickName+userUniv+userLocation);
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				user use = new user();
+				use.setuserID(rs.getString(1));
+				use.setNickName(rs.getString(2));
+				return use;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+		public user findUserPW(String userID, String nickName, String userUniv, String userLocation) {
+			String SQL = "select nickName,userPassword from user where userID = '" + userID + "' and nickName = '"+ nickName+ "'and userLocation = '"+ userLocation +"' and userUniv ='"+ userUniv +"'";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				rs = pstmt.executeQuery();
+		
+				if(rs.next()) {
+					user use = new user();
+					use.setNickName(rs.getString(1));
+					use.setuserPassword(rs.getString(2));
+					return use;
+				}
+		
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+		
 }
 
