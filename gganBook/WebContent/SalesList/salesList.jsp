@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="board.Board" %>
+<%@ page import="board.BoardDAO" %>
 <!DOCTYPE html>
 <html>
 
@@ -18,36 +21,46 @@
         <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
         <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
         <input type="image" src="../images/profile.png" class="profile">
-        <p class="userName">김김지지호호</p>
+        <p class="userName"><%=session.getAttribute("userNickname") %></p>
     </div>
         
+        
+        
+     <%
+     int pageNumber = 1;
+ 	 String userID = null;
+	 if(session.getAttribute("userID") != null){
+		userID = (String)session.getAttribute("userID");
+	}
+     
+     BoardDAO boardDAO = new BoardDAO();
+     ArrayList<Board> list = boardDAO.getMyList(pageNumber, userID);
+ 
+     
+     for(int i = 0; i < 3; i++){
+     %>
+         
     <!-- 뷰 부분 -->
     <br>
     <div class="mainContainer">
+    
         <div class="resultContainer">
-            <img src="../images/booksample.jpg" id="image">
+         <a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
+            <img src="<%= list.get(i).getBoardImage() %>" id="image">
             <div class="txtAreaWrap">
-                <h2>파이썬 프로그래밍 책 팝니다.</h2>
+                <h2><%=list.get(i).getBoardTitle() %></h2>
+                <%if(list.get(i).getBoardAvailable() == 1){ %>
+                <input id="isSold" value="판매중">
+                <%} else{ %>
                 <input id="isSold" value="판매완료">
-                               
+                <%} %>                  
             </div>
             <div class="txtArea">
-                <h4>10000원</h4>
-                <h5>사실분</h5>
+                <h4><%= list.get(i).getBoardPrice() %></h4>
+                <h5><%= list.get(i).getBoardContent() %></h5>
+                <%} %>
             </div> 
-        </div>
-
-        <div class="resultContainer">
-            <img src="../images/booksample2.jpg" id="image">
-            <div class="txtAreaWrap">
-                <h2>Java의 정석 책 팝니다.</h2>
-                <input id="isSold" value="판매완료">
-                               
-            </div>
-            <div class="txtArea">
-                <h4>20000원</h4>
-                <h5>사실분22</h5>
-            </div> 
+            </a>
         </div>
     </div>
 

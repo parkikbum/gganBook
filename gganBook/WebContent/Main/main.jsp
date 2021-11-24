@@ -74,7 +74,7 @@
                 <input type="image" src="../images/logo.png">  
                 <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요">
                 <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-                <input type="image" src="../images/profile.png" class = "profile"><a href="../Mypage/Mypage.jsp"></a>
+                <input type="image" src="../images/profile.png" class = "profile" onclick="location.href='../Mypage/Mypage.jsp'">
                 <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
             </div>   
         </header>  

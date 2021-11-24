@@ -186,5 +186,41 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 	}
 	
 	
+
+	public ArrayList<Board> getMyList(int pageNumber, String userID){
+		//특정한 숫자보다 작은것.
+		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 and userID = ? ORDER BY boardID DESC LIMIT 5";
+		ArrayList<Board> list = new ArrayList<Board>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setInt(1, getNext() - (pageNumber -1) * 10);
+			pstmt.setString(2, userID);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				board.setBoardID(rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setUserID(rs.getString(3));
+				board.setBoardDate(rs.getString(4));
+				board.setBoardContent(rs.getString(5));
+				board.setBoardAvailable(rs.getInt(6));
+				board.setBoardImage(rs.getString(7));
+				board.setBoardUniv(rs.getString(8));
+				board.setBoardLocation(rs.getString(9));
+				board.setBoardPrice(rs.getString(10));
+				list.add(board);
+
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
 }
 
