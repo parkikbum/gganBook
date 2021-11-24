@@ -164,7 +164,27 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 		return null;
 	}
 	
+	public int getMypage(String userID) {
+			String SQL = "SELECT COUNT(*) FROM board WHERE userID = ?";
+			int count = 0;
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+				return count;
 
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	
 }
 
