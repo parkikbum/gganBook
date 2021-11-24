@@ -28,7 +28,6 @@
    		 int result = new BoardDAO().getMypage(userID);
    		 user us = new UserDAO().userInfo(userID);
    		 
-   		 System.out.println(us.getNickname() + us.getuserUniv());
     
     %>
     <form method="post" action='../searchResult/searchResult.jsp'>

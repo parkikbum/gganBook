@@ -153,7 +153,6 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 				board.setBoardUniv(rs.getString(8));
 				board.setBoardLocation(rs.getString(9));
 				board.setBoardPrice(rs.getString(10));
-				System.out.println(rs.getString(2));
 				return board;
 
 			}

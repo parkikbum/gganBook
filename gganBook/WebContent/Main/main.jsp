@@ -85,7 +85,7 @@
         <div id="main">
             <div class="recommend-header-wrap1">
                 <h1>[<%= (String)session.getAttribute("userNickname") %>님이 관심을 가질 것 같아요]</h1>
-                <a href ='../WriteView/WriteView.html'>판매하러가기</a>
+                <a href ='../WriteView/WriteView.jsp'>판매하러가기</a>
             </div>
 <%
 

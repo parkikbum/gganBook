@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="user.user" %>
+<%@ page import="user.UserDAO" %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 
@@ -16,11 +21,11 @@
             <img src="../images/icon.PNG">
         </div>
         <br>
-        <form method="post" action="findID_result1.jsp">
+        <form method="post" action="findID_result2.jsp">
             <input id="nickNameInput" name="nickName" type="text" placeholder="닉네임을 입력해 주세요">
             <br><br>
             <div class="formWrap"></div>
-            <select name="residence">
+            <select name="userLocation">
                 <option hidden>거주지역</option>
                 <option value="seoul">서울특별시</option>
                 <option value="busan">부산광역시</option>
@@ -38,7 +43,7 @@
                 <option value="gyeongsangnam">경상남도</option>
                 <option value="jeju">제주특별자치도</option>
             </select>
-            <select name="college">
+            <select name="userUniv">
                 <option hidden>단과대학</option>
                 <option value="buddhist">불교대학</option>
                 <option value="liberalArts">문과대학</option>
