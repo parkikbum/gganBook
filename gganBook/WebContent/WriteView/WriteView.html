@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>작성하기</title>
         <link rel="stylesheet" href="Header.css"> 
@@ -10,18 +9,33 @@
     </head>
     <body>
         <div id="header"> 
-            <input type="image" src="../images/logo.png">  
-            <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요"">
-            <button type="submit", class="searchButton";> <i class="fa fa-search"></i> </button>
+            <input type="image" id="header_image" src="../images/logo.png">  
+            <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요"">
+            <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
             <input type="image" src="../images/profile.png" class = "profile">
             <p class="userName">김김지지호호</p>
         </div>
-        <form action="writeAction.jsp" method="post">            
+        
+        <form action="writeAction.jsp" method="post">   
+        <center>         
         <h2 class="title">내 책을 깐부들에게 판매 해봐요</h2>
-        <div>
-            <input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요" name="boardTitle">
-            <input type="file" class="image1" name="file">
-            <input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./uploadAction.jsp';  enctype='multipart/form-data'"">
+        </center>
+        <div class="box">
+        	<div class="box_in">
+        	<div>
+            	<input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요" name="boardTitle">   
+            </div>
+            <div>
+         	    <input type="text" name="boardPrice" placeholder="가격을 입력해주세요" class="valueInput">
+         	    <input type="text" name="boardPhoneNumber" placeholder="전화번호를 입력해주세요" class="phoneNumberInput">
+            </div>    
+            <div>     
+          		<input type="file" class="image1" name="file">
+          	</div>
+          	<div>
+           	    <input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./uploadAction.jsp';  enctype='multipart/form-data'"> 
+           	</div>
+           	<div>
             <select name="boardLocation" class="location-select">
                 <option selected="selected">거래하고싶은 지역</option>
 	                <option value="seoul">서울특별시</option>
@@ -39,7 +53,7 @@
 			        <option value="gyeongbuk">경상북도</option>
 			        <option value="gyeongnam">경상남도</option>
 			        <option value="jeju">제주특별자치도</option>
-            </select>
+            </select>     
             <select name="boardUniv" class="college-select">
                 <option selected="selected">단과대학</option>
 					<option selected="selected">단과대학</option>   
@@ -57,13 +71,15 @@
 			        <option value="pharmacy">약학대학</option>
 			        <option value="futureConvergence">미래융합대학</option>
             </select>
-            <input type="text" name="boardPrice" placeholder="가격을 입력해주세요" class="valueInput">
+            <div>
                 <p><textarea cols="40" rows="10" class="explainText" name="boardContent"></textarea></p>
+            </div>
+            <div>
                 <input type="submit" class="submitButton" value="판매글 올리기">
-            </form>
-        </div>
-
-
+            </div>
+            </div>
+            </div>
+       </div>
+       </form>
     </body>
-
 </html>
