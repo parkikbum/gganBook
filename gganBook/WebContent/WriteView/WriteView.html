@@ -8,15 +8,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+    <form action="writeAction.jsp" method="post">
         <div id="header"> 
-            <input type="image" id="header_image" src="../images/logo.png">  
-            <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요"">
-            <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-            <input type="image" src="../images/profile.png" class = "profile">
-            <p class="userName">김김지지호호</p>
-        </div>
-        
-        <form action="writeAction.jsp" method="post">   
+                <input type="image" src="../images/logo.png">  
+                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요" name="search">
+                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
+                <input type="image" src="../images/profile.png" class = "profile" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
+                <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
+            </div> 
+
         <center>         
         <h2 class="title">내 책을 깐부들에게 판매 해봐요</h2>
         </center>

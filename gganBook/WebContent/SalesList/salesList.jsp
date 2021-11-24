@@ -16,13 +16,14 @@
 
 <body>
     <!-- 헤더부분 -->
-    <div id="header">
-        <input type="image" src="../images/logo.png">
-        <input type="text" class="searchTerm" placeholder="책이름을 입력해봐요">
-        <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-        <input type="image" src="../images/profile.png" class="profile">
-        <p class="userName"><%=session.getAttribute("userNickname") %></p>
-    </div>
+    <form method="post" action='../searchResult/searchResult.jsp'>
+  <div id="header"> 
+                <input type="image" src="../images/logo.png">  
+                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요" name="search">
+                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
+                <input type="image" src="../images/profile.png" class = "profile" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
+                <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
+            </div> 
         
         
         
@@ -37,7 +38,7 @@
      ArrayList<Board> list = boardDAO.getMyList(pageNumber, userID);
  
      
-     for(int i = 0; i < 3; i++){
+     for(int i = 0; i < list.size(); i++){
      %>
          
     <!-- 뷰 부분 -->

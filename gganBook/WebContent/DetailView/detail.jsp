@@ -37,13 +37,15 @@
     %>
     
         <!-- 헤더부분 -->
+        <form method="post">
             <div id="header"> 
                 <input type="image" src="../images/logo.png">  
-                <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요">
-                <button type="submit", class="searchButton";> <i class="fa fa-search"></i> </button>
+                <input type="text", class = "searchTerm", placeholder="책이름을 입력해봐요" name="search">
+                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
                 <input type="image" src="../images/profile.png" class = "profile">
                 <p class="userName"><%=(String)session.getAttribute("userNickname") %></p>
             </div>
+            </form>
         <!-- 뷰 부분 -->
         <div>
             <!-- 이미지 뷰 부분 -->

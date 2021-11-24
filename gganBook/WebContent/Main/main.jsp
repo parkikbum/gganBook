@@ -5,7 +5,7 @@
 <%@ page import="board.Board" %>
 <%@ page import="board.BoardDAO" %>
 
-<% request.setCharacterEncoding("utf-8"); %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,14 +69,17 @@
 	%>
 
         <!--헤더 부분-->
-        <header>
+                <form method ="post" action='../searchResult/searchResult.jsp'>
+       		 <header>
             <div id="header"> 
                 <input type="image" src="../images/logo.png">  
-                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요">
-                <button type="submit" class="searchButton"> <i class="fa fa-search"></i> </button>
-                <input type="image" src="../images/profile.png" class = "profile" onclick="location.href='../Mypage/Mypage.jsp'">
+                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요" name="search">
+                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
+                <input type="image" src="../images/profile.png" class = "profile" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
                 <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
             </div>   
+            </form>
+            
         </header>  
 
         <div id="main">
