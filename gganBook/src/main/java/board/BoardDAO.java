@@ -82,7 +82,7 @@ public class BoardDAO {
 	
 	public ArrayList<Board> getList(int pageNumber){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? ORDER BY boardID DESC LIMIT 5";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -188,7 +188,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 
 	public ArrayList<Board> getMyList(int pageNumber, String userID){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 and userID = ? ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? and userID = ? ORDER BY boardID DESC LIMIT 5";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -267,6 +267,18 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 	}
 	public int delete(String boardID) {
 		String SQL = "delete from board where boardID="+boardID+"";
+
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			return pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return -1; // db오류
+	}
+	
+	public int isSold(String userID, String boardID) {
+		String SQL = "update board set boardAvailable = '0' where boardID = '"+boardID+"' and userID = '"+userID+"'";
 
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
