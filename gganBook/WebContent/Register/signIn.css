@@ -37,6 +37,24 @@
     border: 1px solid gainsboro;
 }
 
+#phoneNumber{
+	width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid gainsboro;
+}
+
+#quiz{
+	width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid gainsboro;
+}
+
 #userPassword{
     width: 250px;
     height: 40px;
@@ -82,4 +100,14 @@
     background-color: rgb(30, 129, 243);
     border-radius: 5px;
     color: white;
+}
+
+@font-face {
+    font-family: 'BinggraeMelona';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'BinggraeMelona';
 }
