@@ -14,15 +14,15 @@
 
 <%
 			String userID = request.getParameter("userID");
-			String nickName = request.getParameter("nickName");
+			String userQuiz = request.getParameter("userQuiz");
+			String userPhoneNumber = request.getParameter("userPhoneNumber");
 			String userLocation = request.getParameter("userLocation");
 			String userUniv = request.getParameter("userUniv");
 			
 			String redirectUrl = "findPW.jsp";
 			
-			System.out.println(userID+nickName+userLocation+userUniv);
 			
-			 user us = new UserDAO().findUserPW(userID, nickName, userUniv, userLocation);
+			 user us = new UserDAO().findUserPW(userID, userUniv, userLocation, userPhoneNumber, userQuiz);
 			 if(us == null){
 				 PrintWriter  script = response.getWriter();
 					script.println("<script>");
