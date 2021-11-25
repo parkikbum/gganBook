@@ -111,12 +111,8 @@
 					urlArray[k] = rs.getString("boardImage");
 					k++;
 				}
-				
-				
-	
+
 %>
-
-
                 <%
                 
                 BoardDAO boardDAO = new BoardDAO();
@@ -132,28 +128,30 @@
                 <ul class="slidelist">
                     <li class="slideitem">
                     <%if (urlArray[0] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
                     <%} else{ %>
-                        <img src="../images/NoImage.png"></a>
+                        <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     <li class="slideitem">
                         <%if (urlArray[1] != null){ %>
                         <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID()%>"><img src="<%= urlArray[1]%>"></a>
                     <%} else{ %>
-                        <img src="../images/NoImage.png"></a>
+                        <img src="../images/NoImage.png">
                     <%} %>
                     </li>
+					<li class="slideitem">
                     <%if (urlArray[2] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>"><img src="<%= urlArray[2]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>"><img src="<%= urlArray[2]%>"></a>
                     <%} else{ %>
-                        <img src="../images/NoImage.png"></a>
+                        <img src="../images/NoImage.png">
                     <%} %>
+                    </li>
                     <li class="slideitem">
                        <%if (urlArray[3] != null){ %>
                         <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>"><img src="<%= urlArray[3]%>"></a>
                     <%} else{ %>
-                        <img src="../images/NoImage.png"></a>
+                        <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     

@@ -42,6 +42,7 @@
 		System.out.println("실제파일명 : " + fileRealName + "<br>");
 		System.out.println(board.getBoardImage());
 		script.println("<script>");
+		script.println("alert('이미지가 업로드 되었습니다.')");
 		script.println("history.back()");
 		script.println("</script>");
 

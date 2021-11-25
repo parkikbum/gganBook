@@ -12,6 +12,7 @@ public class Board {
 	private String boardUniv;
 	private String boardLocation;
 	private String boardPrice;
+	private String boardPhoneNumber;
 	
 	
 	public int getBoardID() {
@@ -74,6 +75,13 @@ public class Board {
 	}
 	public void setBoardPrice(String boardPrice) {
 		this.boardPrice = boardPrice;
+	}
+	
+	public String getBoardPhoneNumber() {
+		return boardPhoneNumber;
+	}
+	public void setBoardPhoneNumber(String boardPhoneNumber) {
+		this.boardPhoneNumber = boardPhoneNumber;
 	}
 
 }

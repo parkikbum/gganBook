@@ -10,6 +10,8 @@
 <jsp:setProperty name="board" property="boardUniv"/>
 <jsp:setProperty name="board" property="boardLocation"/>
 <jsp:setProperty name="board" property="boardPrice"/>
+<jsp:setProperty name="board" property="boardPhoneNumber"/>
+
 
 
 
@@ -34,7 +36,7 @@
 			script.println("location.href='/login/login.jsp'");
 			script.println("</script>");
 		} else{
-			if (board.getBoardTitle() == null || board.getBoardContent() == null){
+			if (board.getBoardTitle() == null || board.getBoardContent() == null || board.getBoardPhoneNumber() == null || board.getBoardUniv() == null || board.getBoardPrice() == null || board.getBoardLocation() == null){
 				System.out.println(board.getBoardImage() + board.getBoardContent());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
@@ -43,7 +45,7 @@
 				script.println("</script>");
 			} else{
 				BoardDAO boardDAO = new BoardDAO();
-				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"), board.getBoardPrice());
+				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"), board.getBoardPrice(), board.getBoardPhoneNumber());
 				
 				if(result == -1){
 					PrintWriter script = response.getWriter();
