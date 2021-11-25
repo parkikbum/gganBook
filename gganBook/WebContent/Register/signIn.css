@@ -37,6 +37,15 @@
     border: 1px solid gainsboro;
 }
 
+#phoneNumber{
+	width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid gainsboro;
+}
+
 #userPassword{
     width: 250px;
     height: 40px;
