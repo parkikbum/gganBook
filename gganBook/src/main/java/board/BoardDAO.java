@@ -58,8 +58,8 @@ public class BoardDAO {
 		return -1; //db오류
 	}
 	
-	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice) {
-		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice, String boardPhoneNumber) {
+		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -73,6 +73,7 @@ public class BoardDAO {
 			pstmt.setString(8, boardUniv);
 			pstmt.setString(9, boardLocation);
 			pstmt.setString(10, boardPrice);
+			pstmt.setString(11, boardPhoneNumber);
 			return pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -153,6 +154,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 				board.setBoardUniv(rs.getString(8));
 				board.setBoardLocation(rs.getString(9));
 				board.setBoardPrice(rs.getString(10));
+				board.setBoardPhoneNumber(rs.getString(11));
 				return board;
 
 			}
@@ -223,7 +225,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 	
 	public ArrayList<Board> getSearchList(int pageNumber, String searchString){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' AND boardID < 10 order by boardID desc limit 5";
+		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' order by boardID desc limit 5";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
