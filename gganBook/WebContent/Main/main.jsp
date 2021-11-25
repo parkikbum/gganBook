@@ -99,16 +99,19 @@
 			} catch(Exception e){
 				out.println("DB 연동 오류 입니다. : " + e.getMessage());
 			}
+
+
+		
 				rs.last();
 				rownum = rs.getRow();
 				rs.beforeFirst();
 				
-				for(int i = 0; i < 4; i ++ ){
-					if(rs.next())
-					{
-						urlArray[i] = rs.getString("boardImage");
-					}
+				int k = 0;
+				while(rs.next()){
+					urlArray[k] = rs.getString("boardImage");
+					k++;
 				}
+				
 				
 	
 %>
@@ -128,16 +131,30 @@
                 <input type="radio" name="slide" id="slide04">
                 <ul class="slidelist">
                     <li class="slideitem">
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
+                    <%if (urlArray[0] != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
+                    <%} else{ %>
+                        <img src="../images/NoImage.png"></a>
+                    <%} %>
                     </li>
                     <li class="slideitem">
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID() %>"><img src="<%= urlArray[1]%>"></a>
+                        <%if (urlArray[1] != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID()%>"><img src="<%= urlArray[1]%>"></a>
+                    <%} else{ %>
+                        <img src="../images/NoImage.png"></a>
+                    <%} %>
                     </li>
+                    <%if (urlArray[2] != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>"><img src="<%= urlArray[2]%>"></a>
+                    <%} else{ %>
+                        <img src="../images/NoImage.png"></a>
+                    <%} %>
                     <li class="slideitem">
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID() %>"><img src="<%= urlArray[2]%>"></a>
-                    </li>
-                    <li class="slideitem">
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID() %>"><img src="<%= urlArray[3]%>"></a>
+                       <%if (urlArray[3] != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>"><img src="<%= urlArray[3]%>"></a>
+                    <%} else{ %>
+                        <img src="../images/NoImage.png"></a>
+                    <%} %>
                     </li>
                     
                 </ul>

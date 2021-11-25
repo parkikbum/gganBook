@@ -254,6 +254,28 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 		return list;
 	}
 	
+	public int edit(String boardTitle, String boardID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice) {
+		String SQL = "UPDATE board SET boardTitle ='"+boardTitle+"', boardContent ='"+boardContent+"', boardUniv = '"+boardUniv+"', boardLocation = '"+boardLocation+"', boardImage = '"+boardImage+"', boardPrice = '"+boardPrice+"' where boardID = '"+boardID+"'";
+
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			return pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return -1; // db오류
+	}
+	public int delete(String boardID) {
+		String SQL = "delete from board where boardID="+boardID+"";
+
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			return pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return -1; // db오류
+	}
 	
 }
 
