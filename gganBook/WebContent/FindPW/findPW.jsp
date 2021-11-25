@@ -26,7 +26,8 @@
         <form method="post" action="findPW_result2.jsp">
             <input id="idInput" name="userID" type="text" placeholder="아이디를 입력해 주세요">
             <br>
-            <input id="nickNameInput" name="nickName" type="text" placeholder="닉네임을 입력해 주세요" name="nickName">
+            <input id="nickNameInput"  type="text" placeholder="비밀번호 찾기 질문의 답을 입력해 주세요" name="userQuiz"><br>
+            <input id="nickNameInput"type="text" name="userPhoneNumber" placeholder="-를 붙혀서 전화번호를 입력해주세요">
             <br><br>
             <div class="formWrap"></div>
             <select name="userLocation">
