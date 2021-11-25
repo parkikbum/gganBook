@@ -45,7 +45,6 @@
                 <input type="image" src="../images/profile.png" class = "profile">
                 <p class="userName"><%=(String)session.getAttribute("userNickname") %></p>
             </div>
-            </form>
         <!-- 뷰 부분 -->
         <div>
             <!-- 이미지 뷰 부분 -->
@@ -63,9 +62,23 @@
                 <input type="image" src="../images/sell_icon.PNG" class="cellTag">
                 <%} %>
                 <p class="productExplain"><%=bbs.getBoardContent() %></p>
+                <% if(bbs.getUserID().equals(session.getAttribute("userID"))){ %>
+                <button onclick="javascript: form.action='../EditView/EditView.jsp?boardID=<%=bbs.getBoardID() %> '">게시글 수정하기</button>
+                <% session.setAttribute("boardID", bbs.getBoardID()); %>
+                <button type="button" onclick="delFunc()">게시글 삭제하기</button>
+                <script>
+                function delFunc(){
+   					 if (!confirm("정말 삭제하시겠습니까?")) {
+   					 } else {
+   						location.href= "deleteAction.jsp";
+   					 }
+                }
+				</script>
                 
+                <% System.out.println("글쓴 사람입니다.");} %>
                 </div>
             </div>
+            </form>
 
             
         </div>
