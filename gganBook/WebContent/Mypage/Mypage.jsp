@@ -54,6 +54,7 @@
             <%} %>
         </div>
         <button class="showButton" onclick="location.href='../SalesList/salesList.jsp'">판매 게시글 보기</button>
+        <button onclick="location.href='logoutAction.jsp'">로그아웃</button>
     </body>
 
 </html>
