@@ -7,7 +7,24 @@ public class user {
 	private String userPassword;
 	private String userLocation;
 	private String userUniv;
+	private String phoneNumber;
+	private String quiz;
 	
+	public String getuserQuiz(){
+		return quiz;
+	}
+	
+	public void setuserQuiz(){
+		this.quiz = quiz;
+	}
+	
+	public String getuserPhoneNumber(){
+		return phoneNumber;
+	}
+	
+	public void setuserPhoneNumber(){
+		this.phoneNumber = phoneNumber;
+	}
 	
 	public String getNickname() {
 		return nickName;
