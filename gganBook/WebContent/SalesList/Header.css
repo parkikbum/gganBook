@@ -1,42 +1,66 @@
-#header{background-color: white; display: block; position: absolute; width: 100%; height: 0%;}
-#search{position: absolute; width: 500px; padding-block: 10px;}
-#profileImage{position: absolute; width: 70px; height: 70px; margin-left: 10%;}
-.searchTerm {
-        position: absolute;
-        width: 15%;
-        border: 3px solid gray;
-        border-right: none;
-        padding: 5px;
-        height: 20px;
-        border-radius: 5px 0 0 5px;
-        outline: none;
-        color: gray;
-        padding-block: 10px;   
-    }
-    .searchButton {
-        position: absolute;
-        margin-left: 16%;
-        width: 40px;
-        height: 46px;
-        border: 1px solid gray;
-        background: gray;
-        text-align: center;
-        color: #fff;
-        border-radius: 0 5px 5px 0;
-        cursor: pointer;
-        font-size: 20px;      
-    } 
-    .profile{
-        position: absolute;
-        right: 150px;
-        width: 50px;
-        height: 50px;     
-    }
-    .userName{
-        position: absolute;
-        top: -10px;
-        right: 30px;
-        font-size: 20px;
-        font-weight: bold;   
-    }
-    
+@font-face {
+    font-family: 'BinggraeMelona';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#header{
+    position: absolute;
+    width: 100%;
+   	top:10px;
+    background-color: white;
+    display: block;
+}
+#logo{
+    max-height: 100px;
+    max-width: 100px;
+    margin-top: -5px;
+}
+#searchTerm {
+	font-family: 'BinggraeMelona';
+    position: absolute;
+    width: 15%;
+    height: 20px;
+    border: 3px solid gray;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    color: gray; 
+    padding: 5px;
+    padding-block: 10px;
+    outline: none;
+}
+#searchButton {
+    position: absolute;
+    margin-left: 15%;
+    width: 40px;
+    height: 36px;
+    border: 1px solid gray;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+} 
+#profile{
+    position: absolute;
+    right:0px; 
+    top:10px;
+    width:15%;
+    height:40px;    
+}
+#profileImage{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top:-12px;
+    left:0px;
+}
+#userName{	
+	font-family: 'BinggraeMelona';
+	position: absolute;
+	font-size: 18px;
+    font-weight: bold;   
+    top:-22px;
+    left:50px;  
+}   

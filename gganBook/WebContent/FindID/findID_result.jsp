@@ -6,9 +6,10 @@
 <%@ page import="user.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
-<html>
 <head>
-<title>findID_result2</title>
+    <title>findID_result</title> 
+    <link rel="stylesheet" href="findID.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
 <%
@@ -18,20 +19,21 @@
 			
 			String redirectUrl = "findID.jsp";
 			
-			 user us = new UserDAO().findUserID(nickName, userUniv, userLocation);
+			user us = new UserDAO().findUserID(nickName, userUniv, userLocation);
 			 
-			 if(us == null){
-				 PrintWriter  script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('아이디를 찾을 수 없습니다. 입력한 정보를 확인해주세요')");
-					script.println("location.href='../Login/login.jsp'");
-					script.println("</script>");
-			 }
-			 else{
-
+			if(us == null){
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('아이디를 찾을 수 없습니다. 입력한 정보를 확인해주세요')");
+				script.println("location.href='../Login/login.html'");
+				script.println("</script>");
+			}
+			else{
 %>
-	<h1><%= us.getNickname() %>님의 id는 <%= us.getuserID() %><small>입니다.</small></h1>
-	<a href="findID_result3.jsp">다시 로그인</a>
-	<%} %>	
+	<div class="mainContainer">
+		<h1><%= us.getNickname() %>님의 아이디는 <%= us.getuserID() %><small>입니다.</small></h1>
+		<a href="../Login/login.html">다시 로그인</a>
+	</div>
+<%} %>	
 </body>
 </html>
