@@ -3,26 +3,25 @@
 
 <head>
     <title>findPW</title>
-    <link rel="stylesheet" href="findPW.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="findPW.css?v=3" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
 	<meta charset="UTF-8">
 </head>
 
-<body>
-
-	
+<body>	
 	<div class="mainContainer">
         <div class="iconWrap">
             <img src="../images/icon.PNG">
         </div>
         <br>
-        <form method="post" action="findPW_result2.jsp">
+        <form method="post" action="findPW_result.jsp">
         	<input id="idInput" name="userID" type="text" placeholder="아이디를 입력해 주세요"><p>
-	        <input id="phoneNumberInput" name="phoneNumber" type="text" placeholder="핸드폰 번호를 입력해 주세요" name="nickName"><p>
-	        <input id="answerInput" name="answer" type="text" placeholder="비밀번호 찾기 질문에 대한 답을 입력해 주세요" name="nickName">           
+	        <input id="phoneNumberInput" name="userPhoneNumber" type="text" placeholder="핸드폰 번호를 입력해 주세요" name="nickName"><p>
+	        <input id="answerInput" name="userQuiz" type="text" placeholder="비밀번호 찾기 질문의 답을 입력해 주세요" name="nickName">           
             <div class="formWrap">	            
 	            <select name="userLocation">
+	            	<option hidden>거주지역</option>
 	                <option value="seoul">서울특별시</option>
 	                <option value="busan">부산광역시</option>
 	          		<option value="daejeon">대전광역시</option>

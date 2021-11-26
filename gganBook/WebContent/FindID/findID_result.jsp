@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>findID_result</title> 
-    <link rel="stylesheet" href="findID.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="findID.css?v=3" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
@@ -31,8 +31,8 @@
 	}
 	else{
 %>
-	<div class="mainContainer">
-		<h1><%= us.getNickname() %>님의 아이디는 <%= us.getuserID() %><small>입니다.</small></h1>
+	<div class="resultContainer">
+		<h1><%= us.getNickname() %>님의 아이디는 <b>"<%= us.getuserID() %>" </b>입니다.</h1>
 		<a href="../Login/login.html">다시 로그인</a>
 	</div>
 <%} %>	

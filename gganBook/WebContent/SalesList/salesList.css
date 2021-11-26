@@ -15,9 +15,7 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10em;
-    border: 1px solid gray;
-    border-radius: 20px 20px 20px 20px;
+    margin-top: 10em;    
 }
 
 .resultContainer {
@@ -26,6 +24,8 @@ h4{
     background-color: rgb(244, 247, 250);
     margin-top: 30px;
     padding: 30px;
+    border: 1px solid gray;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .txtAreaWrap {
@@ -59,7 +59,7 @@ h4{
     height: 35px;
     position: relative;
     left:30px;
-    top:18px;
+    top:15px;
     border:0px;
     outline: 0px;
     border-radius: 20px;
