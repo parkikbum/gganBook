@@ -14,24 +14,23 @@
 </head>
 <body>
 <%
-			String userID = request.getParameter("userID");
-			String userQuiz = request.getParameter("userQuiz");
-			String userPhoneNumber = request.getParameter("userPhoneNumber");
-			String userLocation = request.getParameter("userLocation");
-			String userUniv = request.getParameter("userUniv");
-			
-			String redirectUrl = "findPW.jsp";
-			
-			
-			 user us = new UserDAO().findUserPW(userID, userUniv, userLocation, userPhoneNumber, userQuiz);
-			 if(us == null){
-				 PrintWriter  script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('비밀번호를 찾을 수 없습니다. 입력한 정보를 확인해주세요')");
-					script.println("location.href='../Login/login.jsp'");
-					script.println("</script>");
-			 }
-			 else{
+	String userID = request.getParameter("userID");
+	String userQuiz = request.getParameter("userQuiz");
+	String userPhoneNumber = request.getParameter("userPhoneNumber");
+	String userLocation = request.getParameter("userLocation");
+	String userUniv = request.getParameter("userUniv");
+	
+	String redirectUrl = "findPW.jsp";			
+	
+	user us = new UserDAO().findUserPW(userID, userUniv, userLocation, userPhoneNumber, userQuiz);
+	 if(us == null){
+		 PrintWriter  script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('비밀번호를 찾을 수 없습니다. 입력한 정보를 확인해주세요')");
+			script.println("location.href='../Login/login.html'");
+			script.println("</script>");
+	 }
+	 else{
 %>
 	<div class="mainContainer">
 		<h1><%= us.getNickname() %>님의 비밀번호는 <%= (String)us.getuserPassword() %><small>입니다.</small></h1>
