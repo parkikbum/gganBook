@@ -108,8 +108,8 @@ public class UserDAO {
 		return null;
 	}
 	
-		public user findUserPW(String userID, String nickName, String userUniv, String userLocation) {
-			String SQL = "select nickName,userPassword from user where userID = '" + userID + "' and nickName = '"+ nickName+ "'and userLocation = '"+ userLocation +"' and userUniv ='"+ userUniv +"'";
+		public user findUserPW(String userID, String userUniv, String userLocation, String userPhoneNumber, String userQuiz) {
+			String SQL = "select nickName,userPassword from user where userID = '" + userID + "' and userLocation = '"+ userLocation +"' and userUniv ='"+ userUniv +"' and userPhoneNumber = '"+userPhoneNumber+"' and userQuiz='"+userQuiz+"'";
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(SQL);
 				rs = pstmt.executeQuery();
