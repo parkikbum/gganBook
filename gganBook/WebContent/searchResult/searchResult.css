@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'BinggraeMelona';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h4{
     color: red;
     font-weight: bold;
@@ -17,6 +24,8 @@ h4{
     background-color: rgb(244, 247, 250);
     margin-top: 30px;
     padding: 30px;
+    border: 1px solid gray;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .txtAreaWrap {
@@ -25,10 +34,11 @@ h4{
     width: 645px;
     height: 175px;
     position: relative;
-    top: 50px;
+    top: 50px;    
 }
 
 .txtArea {
+	font-family: 'BinggraeMelona';
     width: 645px;
     height: 50px;
     position: relative;
@@ -44,11 +54,12 @@ h4{
 }
 
 #isSold {
+	font-family: 'BinggraeMelona';
     width: 150px;
     height: 35px;
     position: relative;
     left:30px;
-    top:18px;
+    top:15px;
     border:0px;
     outline: 0px;
     border-radius: 20px;
