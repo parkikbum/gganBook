@@ -11,9 +11,9 @@
     <head>
         <meta charset="UTF-8">
         <title>메인</title>
-        <link rel="stylesheet" href="../FindID/Header.css"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="main.css"> 
+        <link rel="stylesheet" href="Header.css?v=3"> 
+        <link rel="stylesheet" href="main.css?v=1.1"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">        
     </head>
     <body>
     
@@ -68,19 +68,19 @@
 				
 	%>
 
-        <!--헤더 부분-->
-                <form method ="post" action='../searchResult/searchResult.jsp'>
-       		 <header>
-            <div id="header"> 
-                <input type="image" src="../images/logo.png">  
-                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요" name="search">
-                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
-                <input type="image" src="../images/profile.png" class = "profile" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
-                <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
-            </div>   
-            </form>
-            
-        </header>  
+          <!-- 헤더부분 -->
+    <form method="post" action='../searchResult/searchResult.jsp'>
+  	<div id="header"> 
+		<input type="image" src="../images/logo.png" id="logo">  
+		<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
+		<button type="submit" id="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
+		<div id="profile">
+	        <input type="image" src="../images/profile.png" id="profileImage" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
+	        <p id="userName"><%= (String)session.getAttribute("userNickname") %></p>
+        </div> 		
+    </div>
+        
+     
 
         <div id="main">
             <div class="recommend-header-wrap1">

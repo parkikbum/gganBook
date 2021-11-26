@@ -9,10 +9,9 @@
 
 <head>
     <title>salesList</title>
-    <link rel="stylesheet" href="Header.css" type="text/css">
-    <link rel="stylesheet" href="salesList.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        type="text/css">
+    <link rel="stylesheet" href="Header.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="salesList.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
 <body>
@@ -59,13 +58,15 @@
             </div>
                      <a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
             <div class="txtArea">
-                <h4><%= list.get(i).getBoardPrice() %></h4>
-                <h5><%= list.get(i).getBoardContent() %></h5>
-                <%} %>
+            	<h4><%= list.get(i).getBoardPrice() %></h4>
+            	<h5><%= list.get(i).getBoardContent() %></h5>
+            	<%} %>
             </div> 
             </a>
         </div>
     </div>
-</body>
 
+    </form>
+
+</body>
 </html>

@@ -1,21 +1,35 @@
 select {
-    width: 117px;
+	font-family: 'BinggraeMelona';
+    width: 123px;
     height: 30px;
     margin: 5px;
     border: 1px solid gainsboro;
     border-radius: 5px;
 }
-
+body{
+	font-family: 'BinggraeMelona';
+}
+p{
+	margin:0;
+}
+@font-face {
+    font-family: 'BinggraeMelona';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .mainContainer {
+	font-family: 'BinggraeMelona';
     position: absolute;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20em;
+    margin-top: 100px;
 }
 
 .iconWrap {
+	font-family: 'BinggraeMelona';
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -23,6 +37,7 @@ select {
 }
 
 .formWrap {
+	font-family: 'BinggraeMelona';
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -30,6 +45,7 @@ select {
 }
 
 .buttonWrap {
+	font-family: 'BinggraeMelona';
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,6 +53,7 @@ select {
 }
 
 #nickNameInput {
+	font-family: 'BinggraeMelona';
     width: 250px;
     height: 40px;
     margin: 5px;
@@ -45,6 +62,7 @@ select {
 }
 
 #btnFindID {
+	font-family: 'BinggraeMelona';
     position: relative;
     width: 120px;
     height: 35px;
