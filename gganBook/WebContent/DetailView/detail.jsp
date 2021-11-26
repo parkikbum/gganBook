@@ -62,6 +62,7 @@
                 <input type="image" src="../images/sell_icon.PNG" class="cellTag">
                 <%} %>
                 <p class="productExplain"><%=bbs.getBoardContent() %></p>
+                <p>전화번호 : <%=bbs.getBoardPhoneNumber() %></p>
                 <% if(bbs.getUserID().equals(session.getAttribute("userID"))){ %>
                 <button onclick="javascript: form.action='../EditView/EditView.jsp?boardID=<%=bbs.getBoardID() %> '">게시글 수정하기</button>
                 <% session.setAttribute("boardID", bbs.getBoardID()); %>
