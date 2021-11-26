@@ -14,7 +14,7 @@ public class user {
 		return quiz;
 	}
 	
-	public void setuserQuiz(){
+	public void setuserQuiz(String quiz){
 		this.quiz = quiz;
 	}
 	
@@ -22,7 +22,7 @@ public class user {
 		return phoneNumber;
 	}
 	
-	public void setuserPhoneNumber(){
+	public void setuserPhoneNumber(String phoneNumber){
 		this.phoneNumber = phoneNumber;
 	}
 	

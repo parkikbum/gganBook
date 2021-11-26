@@ -2,12 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user" class="user.user" scope="page"/>
 <jsp:setProperty name="user" property="userID"/>
 <jsp:setProperty name="user" property="userPassword"/>
 <jsp:setProperty name="user" property="nickName"/>
 <jsp:setProperty name="user" property="userUniv"/>
 <jsp:setProperty name="user" property="userLocation"/>
+<jsp:setProperty name="user" property="userPhoneNumber"/>
+<jsp:setProperty name="user" property="userQuiz"/>
+
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +21,7 @@
     <%
     
     System.out.println(user.getuserID() +  user.getuserPassword() + user.getNickname() + user.getuserUniv() +  user.getuserLocation());
-		if(user.getuserID() == null || user.getuserPassword() == null || user.getNickname() == null || user.getuserUniv() == null || user.getuserLocation() == null){		
+		if(user.getuserID() == null || user.getuserPassword() == null || user.getNickname() == null || user.getuserUniv() == null || user.getuserLocation() == null || user.getuserPhoneNumber() == null || user.getuserQuiz() == null){		
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('모두 입력이 되었는지 확인해 주세요')");
@@ -35,7 +39,7 @@
 			}else{
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('로그인 성공')");
+				script.println("alert('회원가입 성공')");
 				script.println("location.href='../Login/login.html'");
 				script.println("</script>");
 			}
