@@ -12,9 +12,8 @@
 </head>
 <body>
 <%
-
 	BoardDAO boardDAO = new BoardDAO();
-System.out.println((String)session.getAttribute("userID")+(String)request.getParameter("boardID"));
+	System.out.println((String)session.getAttribute("userID")+(String)request.getParameter("boardID"));
 	if(boardDAO.isSold((String)session.getAttribute("userID"),(String)request.getParameter("boardID")) == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -28,10 +27,6 @@ System.out.println((String)session.getAttribute("userID")+(String)request.getPar
 		script.println("location.href='../SalesList/salesList.jsp'");
 		script.println("</script>");
 	}
-
-
-
 %>
-
 </body>
 </html>
