@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
-<body>
-    <!-- 헤더부분 -->
+<body>    
     <form method="post" action='../searchResult/searchResult.jsp'>
+    <!-- 헤더부분 -->
   	<div id="header"> 
 		<input type="image" src="../images/logo.png" id="logo">  
 		<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
@@ -62,8 +62,8 @@
 				<%} else{ %>
 				<input id="isSold" value="판매완료">
 				<%} %>                  
-				</div>
-				<div class="txtArea">
+			</div>
+			<div class="txtArea">
 				<h4><%= list.get(i).getBoardPrice() %></h4>
 				<h5><%= list.get(i).getBoardContent() %></h5>
 				<%} %>
