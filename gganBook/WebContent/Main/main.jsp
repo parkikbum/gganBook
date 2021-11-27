@@ -199,6 +199,7 @@
                             <img src="../images/profile_icon.PNG" id="profile_icon1">
                             <div id="profileName1"><%= list.get(i).getUserID() %></div>
                             <img src="<%= list.get(i).getBoardImage() %>" id="booksample1"><p>
+                            <%System.out.println(list.get(i).getBoardImage()); %>
                             <h2 id="title1"><%= list.get(i).getBoardTitle() %></h2>
         <!--여기서 1이 들어오면 판매중, 1이 아니라면 판매완료임 else가 안들어가서 일단 둘다  if문 처리해둠 ㅋㅋ-->
                             <% if(list.get(i).getBoardAvailable() == 1) {%>  
