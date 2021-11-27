@@ -19,7 +19,7 @@
     <form method="post" action='../searchResult/searchResult.jsp'>
     <!-- 헤더부분 -->
   	<div id="header"> 
-		<input type="image" src="../images/logo.png" id="logo">  
+		<input type="image" src="../images/logo.png" id="logo" onclick="javascript: form.action='../Main/main.jsp'">  
 		<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
 		<button type="submit" id="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
 		<div id="profile">
