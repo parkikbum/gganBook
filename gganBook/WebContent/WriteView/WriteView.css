@@ -1,31 +1,9 @@
-@font-face {
-    font-family: 'BinggraeMelona';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-body{
-	font-family: 'BinggraeMelona';
-}
-.userName{
-	position:absolute;
-	right:35px;
-	top: -15px;
-}
 .location{
 	width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-}
-#header_image{
-	width:auto; height:auto;
-	max-width: 100px;
-	max-height: 100px;
-	position: absolute;
-	left: -10px;
-	top: -5px;
 }
 .box{
 	width: 100%;
@@ -37,22 +15,7 @@ body{
 .box_in{
 	display: inline-block;  
 }
-.searchTerm{
-	position: absolute;
-	left:90px;
-}
-.searchButton{
-	position: absolute;
-	left:90px;
-	width:auto;
-	height:36px;
-}
-.profile{
-	width:30px; height:30px;
-	position: absolute;
-	right:160px;
-	top:5px;
-}
+
 .title{
     text-align: center;
     position: relative;

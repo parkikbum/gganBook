@@ -1,11 +1,15 @@
+.box{
+	 width: 100%;
+	 text-align: center;
+}
+
 .background{
-    position: absolute;
+	display: inline-block;    
     background-color: whitesmoke;
-    top: 200px;
-    left: 300px;
-    right: 200px;
     height: 400px;
     width: 900px;
+    position: relative;
+    top: 300px;
 }
 .profileImage{
     position: relative;
@@ -14,6 +18,12 @@
     width: 150px;
     height: 150px;
 }
+
+.content{
+	 position: relative;
+	 right: 220px;
+}
+
 .line{
     position: relative;
     width: 150px;
@@ -47,10 +57,23 @@
     font-weight: bold;
     color: green;
 }
+
+.buttonLocation{
+	position: relative;
+	top:400px;
+	right: 0px;
+}
+
 .showButton{
-    position: absolute;
-    top: 700px;
-    left: 700px;
+	position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: gray;
+    color: white;
+}
+
+#logOutButton{
+	position: relative;
     width: 200px;
     height: 50px;
     background-color: gray;
