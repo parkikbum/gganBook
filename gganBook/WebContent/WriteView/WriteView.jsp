@@ -4,39 +4,41 @@
 <html>
     <head>
         <title>작성하기</title>
-        <link rel="stylesheet" href="Header.css"> 
+        <link rel="stylesheet" href="../Header/Header.css?v=1.1"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="WriteView.css" type="text/css">
+        <link rel="stylesheet" href="WriteView.css?v=1.1" type="text/css">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
     <form action="writeAction.jsp" method="post">
         <div id="header"> 
-                <input type="image" src="../images/logo.png">  
-                <input type="text" class = "searchTerm" placeholder="책이름을 입력해봐요" name="search">
-                <button type="submit" class="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
-                <input type="image" src="../images/profile.png" class = "profile" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
-                <p class="userName"><%= (String)session.getAttribute("userNickname") %></p>
-            </div> 
+			<input type="image" src="../images/logo.png" id="logo" onclick="javascript: form.action='../Main/main.jsp'">  
+			<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
+			<button type="submit" id="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
+			<div id="profile">
+		        <input type="image" src="../images/profile.png" id="profileImage" onclick="javascript: form.action='../Mypage/Mypage.jsp'">
+		        <p id="userName"><%= (String)session.getAttribute("userNickname") %></p>
+	       </div> 		
+        </div>
 
         <center>         
         <h2 class="title">내 책을 깐부들에게 판매 해봐요</h2>
         </center>
         <div class="box">
         	<div class="box_in">
-        	<div>
-            	<input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요" name="boardTitle">   
-            </div>
-            <div>
-         	    <input type="text" name="boardPrice" placeholder="가격을 입력해주세요" class="valueInput">
-         	    <input type="text" name="boardPhoneNumber" placeholder="전화번호를 입력해주세요" class="phoneNumberInput">
-            </div>    
-            <div>     
-          		<input type="file" class="image1" name="file">
-          	</div>
-          	<div>
-           	    <input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./uploadAction.jsp';  enctype='multipart/form-data'"> 
-           	</div>
+	        	<div>
+	            	<input type="text" class="textInput" placeholder="판매할 책의 이름을 입력해주세요" name="boardTitle">   
+	            </div>
+	            <div>
+	         	    <input type="text" name="boardPrice" placeholder="가격을 입력해주세요" class="valueInput">
+	         	    <input type="text" name="boardPhoneNumber" placeholder="전화번호를 입력해주세요" class="phoneNumberInput">
+	            </div>    
+	            <div>     
+	          		<input type="file" class="image1" name="file">
+	          	</div>
+	          	<div>
+	           	    <input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./uploadAction.jsp';  enctype='multipart/form-data'"> 
+	           	</div>
            	<div>
             <select name="boardLocation" class="location-select">
                 <option selected="selected">거래하고싶은 지역</option>

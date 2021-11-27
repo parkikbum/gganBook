@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <title>메인</title>
-        <link rel="stylesheet" href="Header.css?v=1.1"> 
+        <link rel="stylesheet" href="../Header/Header.css?v=1.1"> 
         <link rel="stylesheet" href="main.css?v=1.1"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">        
     </head>
@@ -71,7 +71,7 @@
           <!-- 헤더부분 -->
     <form method="post" action='../searchResult/searchResult.jsp'>
   	<div id="header"> 
-		<input type="image" src="../images/logo.png" id="logo">  
+		<input type="image" src="../images/logo.png" id="logo" onclick="javascript: form.action='../Main/main.jsp'">  
 		<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
 		<button type="submit" id="searchButton" onclick="javascript: form.action='../searchResult/searchResult.jsp'"> <i class="fa fa-search"></i> </button>
 		<div id="profile">
@@ -81,12 +81,11 @@
     </div>
         
      
-
-        <div id="main">
-            <div class="recommend-header-wrap1">
-                <h1>[<%= (String)session.getAttribute("userNickname") %>님이 관심을 가질 것 같아요]</h1>
-                <a href ='../WriteView/WriteView.jsp'>판매하러가기</a>
-            </div>
+   <div id="main">
+         <div class="recommend-header-wrap1">
+             <h1>[<%= (String)session.getAttribute("userNickname") %>님이 관심을 가질 것 같아요]</h1>
+             <a href ='../WriteView/WriteView.jsp'>판매하러가기</a>
+   </div>
 <%
 
 		try{
