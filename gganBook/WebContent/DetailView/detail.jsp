@@ -35,6 +35,7 @@
     
     %>    
     <!-- 헤더부분 -->
+    <form method="post">
   	<div id="header"> 
 		<input type="image" src="../images/logo.png" id="logo">  
 		<input type="text" id="searchTerm" placeholder="책이름을 입력해봐요" name="search">
@@ -65,17 +66,21 @@
 				<% if(bbs.getUserID().equals(session.getAttribute("userID"))){ %>
 				<button class="btn" onclick="javascript: form.action='../EditView/EditView.jsp?boardID=<%=bbs.getBoardID() %> '">게시글 수정하기</button>
 				<% session.setAttribute("boardID", bbs.getBoardID()); %>
-				<button class="btn" type="button" onclick="delFunc()">게시글 삭제하기</button>
+				<button class="btn" type="button" onclick='delFunc()'>게시글 삭제하기</button>
 				<script>
 				function delFunc(){
-					if (!confirm("정말 삭제하시겠습니까?")) 
-					else 
+					if (!confirm("정말 삭제하시겠습니까?")){
+					} 
+					else{ 
 						location.href= "deleteAction.jsp";
+					}
 				}
 				</script>			            
 				<% System.out.println("글쓴 사람입니다.");} %>
 			</div>
 		</div>
+			</form>
+		
 	</div>
     </body>
 </html>

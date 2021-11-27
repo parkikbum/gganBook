@@ -22,7 +22,10 @@
 <%
 		PrintWriter script = response.getWriter();
 		 // 해당 폴더에 이미지를 저장시킨다
-  	 	 String uploadDir =this.getClass().getResource("").getPath();
+  	 	 String uploadDir =this.getClass().getResource("/").getPath();
+		 
+		 String test = this.getClass().getResource("/").getPath();
+		 
 		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))+"gganBook/WebContent/uploadImage";
 		 System.out.println("절대경로 : " + uploadDir + "<br/>"); 		
 		// 총 100M 까지 저장 가능하게 함
@@ -37,9 +40,11 @@
 		// 실제 서버에 업로드 된 파일시스템 네임
 		String fileRealName = multipartRequest.getFilesystemName("file");
 		// 디비에 업로드 메소드
-		session.setAttribute("imageURL", uploadDir + "/" + fileName);
-		System.out.println("파일명 : " + fileName + "<br>");
-		System.out.println("실제파일명 : " + fileRealName + "<br>");
+		session.setAttribute("imageURL", "../uploadImage/" + fileRealName);
+		System.out.println("파일명 : " + fileName);
+		System.out.println("테스트 : " +test);
+
+		System.out.println("imageURL"+ "../uploadImage/" + fileName);
 		System.out.println(board.getBoardImage());
 		script.println("<script>");
 		script.println("alert('이미지가 업로드 되었습니다.')");
