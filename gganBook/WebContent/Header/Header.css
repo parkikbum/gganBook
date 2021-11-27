@@ -4,6 +4,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+body{
+	font-family: 'BinggraeMelona';
+}
+
 #header{
     position: absolute;
     width: 100%;
@@ -19,7 +24,7 @@
 #searchTerm {
 	font-family: 'BinggraeMelona';
     position: absolute;
-    width: 15%;
+    width: 14%;
     height: 20px;
     border: 3px solid gray;
     border-right: none;
@@ -44,9 +49,9 @@
 } 
 #profile{
     position: absolute;
-    right:0px; 
+    right:100px; 
     top:10px;
-    width:15%;
+    width:400px
     height:40px;    
 }
 #profileImage{
@@ -58,10 +63,10 @@
 }
 #userName{	
 	font-family: 'BinggraeMelona';
-	position: absolute;
 	font-size: 18px;
     font-weight: bold;   
-    top:-22px;
-    left:50px;  
+    position: relative;
+    left:50px;
+    top: -20px;
 }
     
