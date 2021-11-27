@@ -8,6 +8,17 @@ header{
     text-align: center;
 }
 
+.sellbutton{
+	position: relative;
+    top: 3px;
+    left: -5px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
 .recommmend-wrap{
     width: 100%;
     display: flex;
@@ -15,20 +26,76 @@ header{
     align-items: center;
     margin-top: 10px
 }
+.sellButton:hover{
+	background:#13A085;
+ 	color:white;
+}
+
+.sellButton{	
+  color:white;
+  border: none;
+  background: #ff5151; 
+  position:relative;
+  height:50px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  border-radius: 20px;
+}
+
+.profile-wrap{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	border: 1px solid #DBDBDB;
+}
+
 .recommend-body-wrap1,.recommend-body-wrap2,.recommend-body-wrap3,.recommend-body-wrap4,.recommend-body-wrap5{
-    width: 650px;
-    height: 450px;
+	border: 1px soild black;
+    width: 550px;
+    height: 800px;
     position: relative;
-    background-color: rgb(244, 247, 250);
+    background-color: white;
     margin-top: 50px;
-    padding: 30px;
+}
+
+.image-wrap{
+	width: 550px;
+    height: 550px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: table;
+    border: 1px solid #DBDBDB;
+    
+}
+.image-div{
+	display:table-cell;
+    vertical-align:middle;
+}
+
+.image-wrap image{
+  	 max-width: 550px;
+ 	 max-height: 550px;
+ 	 margin: 0px;
+}
+
+.content-wrap{
+	width:510px;
+	height: 124px;
+	padding: 20px;
+	marign: 0;
+	border: 1px solid #DBDBDB;
 }
 
 .container1{
     text-align: left;
     position: relative;
-
 }
+
 .container2,.container3,.container4,.container5{
     position: relative;
     text-align: left;
@@ -39,12 +106,7 @@ header{
    margin-bottom: 30px;
    display: inline-block;
 }
-.sort{
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid gainsboro;
-}
+
 ul, li {list-style:none;}
 
 h1{
@@ -59,17 +121,22 @@ h2{
 }
 
 #booksample1,#booksample2,#booksample3,#booksample4,#booksample5{
-    width: 30%;
+    width: 550px;
+    height: 550px;
     display:inline-block; 
     margin:auto;
+    padding: 0;
     position: relative;
-    left: 150px;
-    top: -20px
+    top: 10px;
+    object-fit:cover;
 }
 
 #profile_icon1,#profile_icon2,#profile_icon3,#profile_icon4,#profile_icon5{
     position: relative;
-    top: 5px;
+    top: 10px;
+    left: 10px;
+    width:40px;
+   	height:40px;
 }
 
 #price1,#price2,#price3,#price4,#price5{
@@ -80,7 +147,12 @@ h2{
 #profileName1, #profileName2, #profileName3, #profileName4, #profileName5{
     display: inline;
     font-weight: bold;
+    position: relative;
+    top: -5px;
+    left: 20px;
     margin-bottom: 30px;
+    text-decoration: none;
+    font-size: 20px;
 }
 #mainText1,#mainText2,#mainText3,#mainText4,#mainText5{
     text-align: left;
@@ -91,6 +163,39 @@ h2{
     top: 3px;
     left: -5px;
 }
+
+#isSale{
+	font-family: 'BinggraeMelona';
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: -5px;
+    top: -5px;
+    border:0px;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: medium;
+    color:white;
+    text-align: center;
+    background-color: #ff5151;
+}
+
+#isSold{
+	font-family: 'BinggraeMelona';
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: -5px;
+    top: -5px;
+    border:0px;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: medium;
+    color:white;
+    text-align: center;
+    background-color: #13A085;
+}
+
 @font-face {
     font-family: 'BinggraeMelona';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona.woff') format('woff');
@@ -99,22 +204,25 @@ h2{
 }
 body{
 	font-family: 'BinggraeMelona';
+	background-color: rgb(244, 247, 250);
+	width: 100%;
+    height: 100%;
 }
 
 
-.slidebox {max-width:600px;margin:auto; position:relative;}
+.slidebox {max-width:500px; max-height:400px; margin:0 auto;position:relative;}
 .slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
 .slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
-.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
-.slidebox .slidelist .slideitem > a img {max-width:60%; position: relative; left: -20px;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto; height:395px; position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:100%; height:395px; object-fit: cover; padding:0;}
 
 .slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
 .slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('../images/leftbutton.PNG') center center / 50% no-repeat;}
 .slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('../images/rightbutton.PNG') center center / 50% no-repeat;}
 
 [name="slide"] {display:none;}
-#slide01:checked ~ .slidelist .slideitem {left:0;}
-#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide01:checked ~ .slidelist .slideitem {left: 0px;}
+#slide02:checked ~ .slidelist .slideitem {left:-109%;}
 #slide03:checked ~ .slidelist .slideitem {left:-200%;}
 #slide04:checked ~ .slidelist .slideitem {left:-300%;}
 

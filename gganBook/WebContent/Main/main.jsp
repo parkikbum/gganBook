@@ -84,7 +84,7 @@
    <div id="main">
          <div class="recommend-header-wrap1">
              <h1>[<%= (String)session.getAttribute("userNickname") %>님이 관심을 가질 것 같아요]</h1>
-             <a href ='../WriteView/WriteView.jsp'>판매하러가기</a>
+             <button type="submit" class="sellButton" onclick="javascript: form.action='../WriteView/WriteView.jsp'">판매하러가기</button>
    </div>
 <%
 
@@ -127,28 +127,32 @@
                 <ul class="slidelist">
                     <li class="slideitem">
                     <%if (urlArray[0] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>"><img src="<%= urlArray[0]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>">
+                        <img src="<%= urlArray[0]%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     <li class="slideitem">
                         <%if (urlArray[1] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID()%>"><img src="<%= urlArray[1]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID()%>">
+                        <img src="<%= urlArray[1]%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
 					<li class="slideitem">
                     <%if (urlArray[2] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>"><img src="<%= urlArray[2]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>">
+                        <img src="<%= urlArray[2]%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     <li class="slideitem">
                        <%if (urlArray[3] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>"><img src="<%= urlArray[3]%>"></a>
+                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>">
+                        <img src="<%= urlArray[3]%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
@@ -181,10 +185,6 @@
                 <div class="recommmend-wrap">
                     <div class="recommend-header-wrap2">
                         <h1>[이런 책도 있어요]</h1>
-                        <select class="sort">
-                            <option>최신순</option>
-                            <option>인기순</option>
-                        </select>
                     </div>
                     
                     <%	
@@ -195,19 +195,29 @@
                     <div class="container<%= i+1%>">
                     <a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
                         <div class="recommend-body-wrap1">
-                            <img src="../images/profile_icon.PNG" id="profile_icon1">
-                            <div id="profileName1"><%= list.get(i).getUserID() %></div>
-                            <img src="<%= list.get(i).getBoardImage() %>" id="booksample1"><p>
-                            <%System.out.println(list.get(i).getBoardImage()); %>
-                            <h2 id="title1"><%= list.get(i).getBoardTitle() %></h2>
-        <!--여기서 1이 들어오면 판매중, 1이 아니라면 판매완료임 else가 안들어가서 일단 둘다  if문 처리해둠 ㅋㅋ-->
-                            <% if(list.get(i).getBoardAvailable() == 1) {%>  
-                            <img src="../images/sell_icon.PNG" id="sell_icon1"><%} %>
-                            <% if(list.get(i).getBoardAvailable() == 0){ %>
-                            <img src="../images/logo.png" id="sell_icon1"><%} %>
-                            
-                            <div id="price1"><%= list.get(i).getBoardPrice() %></div>
-                            <div id="mainText1"><%= list.get(i).getBoardContent() %></div>
+                        	<div class="profile-wrap">
+	                            <img src="../images/profile_icon.PNG" id="profile_icon1">
+	                            <div id="profileName1"><%= list.get(i).getUserID() %></div>
+                            </div>
+	                            <div class="image-wrap">
+	                            	<div class="image-div">
+	                            	<div class="content-image">
+			                            <img src="<%= list.get(i).getBoardImage() %>" id="booksample1"><p>
+			                            <%System.out.println(list.get(i).getBoardImage()); %>
+		                            </div>
+	                            </div>
+                            </div>
+                            <div class="content-wrap">
+	                            <h2 id="title1"><%= list.get(i).getBoardTitle() %></h2>
+	        <!--여기서 1이 들어오면 판매중, 1이 아니라면 판매완료임 else가 안들어가서 일단 둘다  if문 처리해둠 ㅋㅋ-->
+	                            <%if(list.get(i).getBoardAvailable() == 1){ %>
+									<input id="isSale" value="판매중" disabled>
+									<%} else{ %>
+									<input id="isSold" value="판매완료" disabled>
+									<%} %>    
+	                            <div id="price1"><%= list.get(i).getBoardPrice() %></div>
+	                            <div id="mainText1"><%= list.get(i).getBoardContent() %></div>
+                            </div>
                         </div><p><p>
                         </a>
                     </div>
