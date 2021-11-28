@@ -58,9 +58,9 @@
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>
-				<input id="isSold" value="판매중" disabled>
+				<input id="forSale" value="판매중" disabled>
 				<%} else{ %>
-				<input id="isSold" value="판매완료" disabled>
+				<input id="sold" value="판매완료" disabled>
 				<%} %>                  
 			</div>
 			<div class="priceArea">

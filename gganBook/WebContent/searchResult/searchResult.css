@@ -53,22 +53,13 @@ a{
     text-align:left;
 }
 
-#image {
-	position: relative;
-    width: 550px;
-    height: 550px;
-    padding-top:10px;
-    padding-bottom:10px;
-    border-bottom: 1px solid gray;
-}
-
-.forSale {
+#forSale {
 	font-family: 'BinggraeMelona';
 	position: absolute;   
     width: 150px;
     height: 35px;
-	top: 72px;
-    left: 150px;
+	top: 55px;
+    left: 100px;
     border:0px;
     outline: 0px;
     border-radius: 20px;
@@ -78,13 +69,13 @@ a{
     background-color: #13A085;
 }
 
-.sold {
+#sold {
 	font-family: 'BinggraeMelona';
 	position: absolute;   
     width: 150px;
     height: 35px;
-	top: 72px;
-    left: 150px;
+	top: 55px;
+    left: 100px;
     border:0px;
     outline: 0px;
     border-radius: 20px;
@@ -94,18 +85,11 @@ a{
     background-color: red;
 }
 
-#isSold {
-	font-family: 'BinggraeMelona';
-    width: 150px;
-    height: 35px;
-    position: relative;
-    left:30px;
-    top:15px;
-    border:0px;
-    outline: 0px;
-    border-radius: 20px;
-    font-size: medium;
-    color:white;
-    text-align: center;
-    background-color: #13A085;
+#image {
+	position: relative;
+    width: 550px;
+    height: 550px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom: 1px solid gray;
 }

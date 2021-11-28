@@ -10,7 +10,7 @@
 <head>
     <title>salesList</title>
     <link rel="stylesheet" href="../Header/Header.css?v=1.1" type="text/css">
-    <link rel="stylesheet" href="salesList.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="salesList.css?v=3" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
@@ -46,10 +46,10 @@
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>
-				<button type="button" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
+				<button type="button" id="changeToSold" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
 				<input id="forSale" value="판매중" disabled>
 				<%} else{ %>
-				<input id="isSold" value="판매완료" disabled>
+				<input id="sold" value="판매완료" disabled>
 				<%} %>                  
 			</div>
 			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">

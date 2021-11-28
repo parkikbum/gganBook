@@ -109,6 +109,9 @@
 				while(rs.next()){
 					urlArray[k] = rs.getString("boardImage");
 					k++;
+					if(k == 3){
+						break;
+					}
 				}
 
 %>
