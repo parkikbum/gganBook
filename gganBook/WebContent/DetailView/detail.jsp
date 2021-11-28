@@ -48,17 +48,17 @@
     <!-- 뷰 부분 -->
 	<div class = "mainContainer">
 		<div class="imageContainer">
-			<input type="image", src="../images/profile.png" class="sellerProfile">
+			<input type="image" src="../images/profile.png" class="sellerProfile">
 			<p class="sellerName"><%=bbs.getUserID() %></p>
-			<input type="image", src=<%=bbs.getBoardImage() %> class="productImage">   
+			<input type="image" id="image" src="<%=bbs.getBoardImage() %>" class="productImage">   
 		</div>
 		<div class="detailContainer">
-			<p class="productName"><%=bbs.getBoardTitle() %></p><br>
+			<p class="productName"><%=bbs.getBoardTitle() %></p>
 			<p class="price"><%=bbs.getBoardPrice() %></p>
 			<%if (bbs.getBoardAvailable() == 1) { %>
 				<input class="forSale" value="판매중" disabled>
 			<%} else{%>
-				<input class="sold" value="판매중" disabled>
+				<input class="sold" value="판매완료" disabled>
 			<%} %>
 			<p class="productExplain"><%=bbs.getBoardContent() %></p>
 			<p class="phoneNumber">전화번호 : <%=bbs.getBoardPhoneNumber() %></p>

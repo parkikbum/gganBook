@@ -10,7 +10,13 @@ h4{
     font-weight: bold;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
+
 .mainContainer {
+	position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -19,38 +25,73 @@ h4{
 }
 
 .resultContainer {
-    width: 650px;
-    height: 450px;
-    background-color: rgb(244, 247, 250);
-    margin-top: 30px;
-    padding: 30px;
-    border: 1px solid gray;
-    border-radius: 20px 20px 20px 20px;
-}
-
-.txtAreaWrap {
-    display: flex;
-    flex-direction: row;
-    width: 645px;
-    height: 175px;
     position: relative;
-    top: 50px;    
+    width: 550px;
+    height: 740px;
+    margin-top: 30px;
+    border: 1px solid gray;
+    text-align: center;
 }
 
 .txtArea {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 490px;
+    height: 160px;
+	top:0px;
+	left:30px;   
+}
+
+.priceArea {
+	position: relative;
 	font-family: 'BinggraeMelona';
-    width: 645px;
-    height: 50px;
-    position: relative;
-    top: -90px;
+    width: 490px;
+    height: 100px;
+    top:-125px;
+    left: 30px;
+    text-align:left;
 }
 
 #image {
-    width: 50%;
-    height: 50%;
-    position: relative;
-    left: 175px;
-    top: 30px;
+	position: relative;
+    width: 550px;
+    height: 550px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom: 1px solid gray;
+}
+
+.forSale {
+	font-family: 'BinggraeMelona';
+	position: absolute;   
+    width: 150px;
+    height: 35px;
+	top: 72px;
+    left: 150px;
+    border:0px;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: medium;
+    color:white;
+    text-align: center;
+    background-color: #13A085;
+}
+
+.sold {
+	font-family: 'BinggraeMelona';
+	position: absolute;   
+    width: 150px;
+    height: 35px;
+	top: 72px;
+    left: 150px;
+    border:0px;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: medium;
+    color:white;
+    text-align: center;
+    background-color: red;
 }
 
 #isSold {

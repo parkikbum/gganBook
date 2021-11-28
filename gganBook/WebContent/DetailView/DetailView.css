@@ -29,14 +29,11 @@ h4{
 
 .detailContainer {
 	position: absolute;
-	top: 67px;
+	top: 100px;
 	left: 500px;
     width: 60%;
     height: 450px;
-    background-color: rgb(244, 247, 250);
-    padding: 30px;
-    border: 1px solid gray;
-    border-radius: 20px 20px 20px 20px;
+    border-left: 1px solid gray;
 }
 
 .txtAreaWrap {
@@ -149,21 +146,30 @@ h4{
 
 .buttonWrap{
     position: absolute;   
+    text-align: left;
     top: 445px;
     left: 65px;
     width: 85%;
     height: 50px;
 }
 
-.btn {
+.btn {	
 	font-family: 'BinggraeMelona';
     position: relative;
-    top: 7px;
-    left: 265px;
+    top: -35px;
+    left: 0px;
     width: 120px;
     height: 35px;
     border-radius: 5px;
     font-size: small;
     background-color: #3498DB;
     color: white;
+}
+
+#image {
+	position: relative;
+	top: 50px;
+	left: 30px;
+    width:  400px;
+    height:  400px;
 }
