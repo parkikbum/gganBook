@@ -46,12 +46,15 @@
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>
-				<button type="button" id="changeToSold" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
+							
 				<input id="forSale" value="판매중" disabled>
 				<%} else{ %>
 				<input id="sold" value="판매완료" disabled>
 				<%} %>                  
 			</div>
+			<div class="btnArea">
+					<button type="button" id="changeToSold" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
+			</div>	
 			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
 			<div class="priceArea">
 				<h4><%= list.get(i).getBoardPrice() %></h4>

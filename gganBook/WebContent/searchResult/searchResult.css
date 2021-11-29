@@ -63,7 +63,8 @@ a{
     width: 490px;
     height: 160px;
 	top:-70px;
-	left:20px;   
+	left:20px;
+	overflow: hidden;
 }
 
 .priceArea {
@@ -74,6 +75,7 @@ a{
     top:-190px;
     left: 20px;
     text-align:left;
+    overflow: hidden;
 }
 
 #forSale {
