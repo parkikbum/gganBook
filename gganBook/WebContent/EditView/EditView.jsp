@@ -56,7 +56,7 @@
           	<div>
           		<%session.setAttribute("imageURL", board.getBoardImage()); %>
           		<%session.setAttribute("boardID",boardID);%>
-           	    <input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./EditAction.jsp';  enctype='multipart/form-data'"> 
+	           	<input type="submit" class="image2" value="사진 등록하기"  onclick="javascript: form.action='./uploadAction.jsp';  enctype='multipart/form-data'"> 
            	</div>
            	<div>
             <select name="boardLocation" class="location-select">
@@ -98,7 +98,7 @@
                 <p><textarea cols="40" rows="10" class="explainText" name="boardContent"><%=board.getBoardContent() %></textarea></p>
             </div>
             <div>
-                <input type="submit" class="submitButton" value="판매글 올리기">
+                <input type="submit" class="submitButton" value="수정하기">
             </div>
             </div>
             </div>

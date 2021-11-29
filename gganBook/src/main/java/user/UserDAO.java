@@ -128,6 +128,25 @@ public class UserDAO {
 			return null;
 		}
 		
+		
+		public user reccomendData(String userID) {
+			String SQL = "select nickName,userUniv from user where userID = '"+userID+"'";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				rs = pstmt.executeQuery();
+		
+				if(rs.next()) {
+					user use = new user();
+					use.setNickName(rs.getString(1));
+					use.setuserUniv(rs.getString(2));
+					return use;
+				}
+		
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
 
 		
 		

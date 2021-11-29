@@ -4,6 +4,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="board.Board" %>
 <%@ page import="board.BoardDAO" %>
+<%@ page import="user.user" %>
+<%@ page import="user.UserDAO" %>
 
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
@@ -20,10 +22,6 @@
     <%
 			int id,ref;
 			int rownum = 0;
-			Connection conn = null;
-			Statement stmt = null;
-			String sql = null;
-			ResultSet rs = null;
 			
 			String[] urlArray = new String[5];
 			
@@ -31,39 +29,11 @@
 			if(request.getParameter("pageNumber") != null){
 				pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 			}
-			
-			
-			try{
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				String url = "jdbc:mysql://database-1-user.coimq8nymisd.us-east-2.rds.amazonaws.com/gganbook";
-				conn = DriverManager.getConnection(url, "admin", "12345678");
-				stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-				sql = " select nickName from user where userID = '" + session.getAttribute("userID") +"'";
-				rs = stmt.executeQuery(sql);
-			} catch(Exception e){
-				out.println("DB 연동 오류 입니다. : " + e.getMessage());
-			}
-				rs.last();
-				rownum = rs.getRow();
-				rs.beforeFirst();
-				
-				while(rs.next())
-				{
-					session.setAttribute("userNickname", rs.getString("nickName"));
-				}
-			
-				try{
-					sql = " select userUniv from user where userID = '" + session.getAttribute("userID") +"'";
-					rs = stmt.executeQuery(sql);
-				}catch(Exception e){
-					out.println("DB 연동 오류입니다. : " + e.getMessage());
-				}
-				rs.last();
-				rownum = rs.getRow();
-				rs.beforeFirst();
-				while(rs.next()){
-					session.setAttribute("userUniv", rs.getString("userUniv"));
-				}
+
+	   		 user us = new UserDAO().reccomendData((String)session.getAttribute("userID"));
+	   		 session.setAttribute("userNickname", us.getNickname());
+			session.setAttribute("userUniv", us.getuserUniv());
+
 					
 				
 	%>
@@ -88,37 +58,14 @@
    </div>
 <%
 
-		try{
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				String url = "jdbc:mysql://database-1-user.coimq8nymisd.us-east-2.rds.amazonaws.com/gganbook";
-				conn = DriverManager.getConnection(url, "admin", "12345678");
-				stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-				sql = "select boardImage from board where boardUniv = '" + session.getAttribute("userUniv") +"'";
-				rs = stmt.executeQuery(sql);
-			} catch(Exception e){
-				out.println("DB 연동 오류 입니다. : " + e.getMessage());
-			}
 
-
-		
-				rs.last();
-				rownum = rs.getRow();
-				rs.beforeFirst();
-				
-				int k = 0;
-				while(rs.next()){
-					urlArray[k] = rs.getString("boardImage");
-					k++;
-					if(k == 3){
-						break;
-					}
-				}
 
 %>
                 <%
                 
                 BoardDAO boardDAO = new BoardDAO();
         		ArrayList<Board> list = boardDAO.getList(pageNumber);
+        		ArrayList<Board> imageList = boardDAO.getRecommendImage((String)session.getAttribute("userUniv"));
                 
                 %>
             <!--슬라이더 부분-->
@@ -129,33 +76,33 @@
                 <input type="radio" name="slide" id="slide04">
                 <ul class="slidelist">
                     <li class="slideitem">
-                    <%if (urlArray[0] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(2).getBoardID()%>">
-                        <img src="<%= urlArray[0]%>"></a>
+                    <%if (imageList.get(0).getBoardImage() != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=imageList.get(0).getBoardID()%>">
+                        <img src="<%= imageList.get(0).getBoardImage()%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     <li class="slideitem">
-                        <%if (urlArray[1] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(1).getBoardID()%>">
-                        <img src="<%= urlArray[1]%>"></a>
+                        <%if (imageList.get(1).getBoardImage() != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=imageList.get(1).getBoardID()%>">
+                        <img src="<%= imageList.get(1).getBoardImage()%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
 					<li class="slideitem">
-                    <%if (urlArray[2] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(0).getBoardID()%>">
-                        <img src="<%= urlArray[2]%>"></a>
+                    <%if (imageList.get(2).getBoardImage() != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=imageList.get(2).getBoardID()%>">
+                        <img src="<%= imageList.get(2).getBoardImage()%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
                     </li>
                     <li class="slideitem">
-                       <%if (urlArray[3] != null){ %>
-                        <a href="../DetailView/detail.jsp?boardID=<%=list.get(3).getBoardID()%>">
-                        <img src="<%= urlArray[3]%>"></a>
+                       <%if (imageList.get(3).getBoardImage() != null){ %>
+                        <a href="../DetailView/detail.jsp?boardID=<%=imageList.get(3).getBoardID()%>">
+                        <img src="<%= imageList.get(3).getBoardImage()%>"></a>
                     <%} else{ %>
                         <img src="../images/NoImage.png">
                     <%} %>
