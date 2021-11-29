@@ -50,8 +50,15 @@
 		        //	boardID = Integer.parseInt(request.getParameter("boardID"));
 		        //}
 	
-				System.out.println(board.getBoardTitle()+session.getAttribute("boardID")+ board.getBoardContent()+ board.getBoardUniv() +board.getBoardLocation()+ (String)session.getAttribute("imageURL")+ board.getBoardPrice());
-				int result = boardDAO.edit(board.getBoardTitle(),String.valueOf(session.getAttribute("boardID")) , board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"), board.getBoardPrice());
+				System.out.println((String)session.getAttribute("userNickName"));
+				int result = boardDAO.edit(board.getBoardTitle(),
+						String.valueOf(session.getAttribute("boardID")) , 
+						board.getBoardContent(), 
+						board.getBoardUniv(), 
+						board.getBoardLocation(), 
+						(String)session.getAttribute("imageURL"), 
+						board.getBoardPrice(), 
+						(String)session.getAttribute("userNickname"));
 				
 				if(result == -1){
 					PrintWriter script = response.getWriter();

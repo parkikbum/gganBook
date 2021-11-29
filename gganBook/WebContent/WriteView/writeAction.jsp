@@ -45,7 +45,7 @@
 				script.println("</script>");
 			} else{
 				BoardDAO boardDAO = new BoardDAO();
-				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(), (String)session.getAttribute("imageURL"), board.getBoardPrice(), board.getBoardPhoneNumber());
+				int result = boardDAO.write(board.getBoardTitle(), userID, board.getBoardContent(), board.getBoardUniv(), board.getBoardLocation(),(String)session.getAttribute("imageURL"), board.getBoardPrice(), board.getBoardPhoneNumber(), (String)session.getAttribute("userNickname"));
 				
 				if(result == -1){
 					PrintWriter script = response.getWriter();

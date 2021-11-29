@@ -278,5 +278,31 @@ public class BoardDAO {
 		return -1; // db오류
 	}
 	
+	
+	public ArrayList<Board> getRecommendImage(String userUniv){
+		//특정한 숫자보다 작은것.
+		String SQL = "select boardImage,boardID from board where boardUniv = '"+userUniv+"' order by boardID desc limit 4";
+		ArrayList<Board> list = new ArrayList<Board>(); 
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				board.setBoardImage(rs.getString(1));
+				board.setBoardID(rs.getInt(2));
+				list.add(board);
+
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
+	
 }
 
