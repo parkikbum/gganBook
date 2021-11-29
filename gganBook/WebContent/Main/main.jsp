@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <title>깐북</title>
-        <link rel="stylesheet" href="../Header/Header.css?v=1.1"> 
+        <link rel="stylesheet" href="../Header/Header.css?v=1.3"> 
         <link rel="stylesheet" href="main.css?v=1.1"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">        
     </head>
