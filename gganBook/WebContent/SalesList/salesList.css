@@ -29,7 +29,7 @@ a{
     width: 550px;
     height: 740px;
     margin-top: 30px;
-    border: 1px solid gray;
+    border: 1px solid #DBDBDB;
     text-align: center;
 }
 
@@ -107,5 +107,5 @@ a{
     height: 550px;
     padding-top:10px;
     padding-bottom:10px;
-    border-bottom: 1px solid gray;
+    border: 1px solid #DBDBDB;
 }

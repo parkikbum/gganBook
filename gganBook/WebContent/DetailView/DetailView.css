@@ -16,24 +16,30 @@ h4{
     flex-direction: column;
     align-items: center;
     margin-top: 10em;    
+    position: relative;
+    right: -350px;
+    top: 40px;
 }
 
 .imageContainer {
 	position: absolute;
 	top: 67px;
 	left: 10px;
-    width: 30%;
+    width: 430px;
     height: 450px;
     padding: 30px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
 }
 
 .detailContainer {
 	position: absolute;
-	top: 100px;
+	top: 67px;
 	left: 500px;
-    width: 60%;
-    height: 450px;
-    border-left: 1px solid gray;
+    width: 600px;
+    height: 510px;
+    border: 1px solid #DBDBDB;
+    background-color: white;
 }
 
 .txtAreaWrap {
