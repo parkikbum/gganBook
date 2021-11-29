@@ -13,6 +13,7 @@ public class Board {
 	private String boardLocation;
 	private String boardPrice;
 	private String boardPhoneNumber;
+	private String nickName;
 	
 	
 	public int getBoardID() {
@@ -82,6 +83,13 @@ public class Board {
 	}
 	public void setBoardPhoneNumber(String boardPhoneNumber) {
 		this.boardPhoneNumber = boardPhoneNumber;
+	}
+	
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
 }

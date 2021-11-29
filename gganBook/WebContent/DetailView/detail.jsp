@@ -49,7 +49,7 @@
 	<div class = "mainContainer">
 		<div class="imageContainer">
 			<input type="image" src="../images/profile.png" class="sellerProfile">
-			<p class="sellerName"><%=bbs.getUserID() %></p>
+			<p class="sellerName"><%=bbs.getNickName() %></p>
 			<input type="image" id="image" src="<%=bbs.getBoardImage() %>" class="productImage">   
 		</div>
 		<div class="detailContainer">

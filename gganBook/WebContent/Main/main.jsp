@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>메인</title>
+        <title>깐북</title>
         <link rel="stylesheet" href="../Header/Header.css?v=1.1"> 
         <link rel="stylesheet" href="main.css?v=1.1"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">        
@@ -200,13 +200,13 @@
                         <div class="recommend-body-wrap1">
                         	<div class="profile-wrap">
 	                            <img src="../images/profile_icon.PNG" id="profile_icon1">
-	                            <div id="profileName1"><%= list.get(i).getUserID() %></div>
+	                            <div id="profileName1"><%=(String)list.get(i).getNickName() %></div>
                             </div>
 	                            <div class="image-wrap">
 	                            	<div class="image-div">
 	                            	<div class="content-image">
 			                            <img src="<%= list.get(i).getBoardImage() %>" id="booksample1"><p>
-			                            <%System.out.println(list.get(i).getBoardImage()); %>
+			                            <%System.out.println(list.get(i).getNickName()); %>
 		                            </div>
 	                            </div>
                             </div>
