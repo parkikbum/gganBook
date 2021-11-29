@@ -195,7 +195,7 @@
 
                     %>
                     
-                    <div class="container<%= i+1%>">
+                    <div class="container<%= i%5%>">
                     <a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
                         <div class="recommend-body-wrap1">
                         	<div class="profile-wrap">

@@ -84,7 +84,7 @@ public class BoardDAO {
 	
 	public ArrayList<Board> getList(int pageNumber){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? ORDER BY boardID DESC LIMIT 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -176,7 +176,7 @@ public class BoardDAO {
 
 	public ArrayList<Board> getMyList(int pageNumber, String userID){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? and userID = ? ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? and userID = ? ORDER BY boardID DESC LIMIT 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -211,7 +211,7 @@ public class BoardDAO {
 	
 	public ArrayList<Board> getSearchList(int pageNumber, String searchString){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' order by boardID desc limit 5";
+		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' order by boardID desc limit 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
