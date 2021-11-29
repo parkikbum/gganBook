@@ -40,6 +40,7 @@ h4{
     height: 510px;
     border: 1px solid #DBDBDB;
     background-color: white;
+    overflow: scroll;
 }
 
 .txtAreaWrap {

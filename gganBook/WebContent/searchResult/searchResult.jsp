@@ -55,9 +55,9 @@
 		<div class="resultContainer">
 			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
-			<div class="profile-wrap">
-				<img src="../images/profile_icon.PNG" id="profile_icon1">
-	            <div id="profileName1"><%= list.get(i).getNickName() %></div>
+			<div class="profileWrap">
+				<img src="../images/profile_icon.PNG" class="profileIcon">
+	            <div class="profileName"><%= list.get(i).getNickName() %></div>
 			</div>
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>

@@ -14,34 +14,37 @@ a{
 	text-decoration: none;
 	color: black;
 }
-#profileName1{
-	position: relative;
-	top: -25px;
-	left: -210px;
-}
 
-#profile_icon1{
-	position: relative;
-    top: 10px;
-    left: -250px;
-    width:40px;
-   	height:40px;
-}
-.profile-wrap{
-	width: 550px;
-    height: 60px;
-    border: 1px solid #DBDBDB;
-    position: relative;
-    top: -640px;
-    
-}
 .mainContainer {
-	position: relative;
+	position: absolute;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10em;
+}
+
+.profileWrap{
+	position: relative;
+	top: -637px;
+	left: -1px;
+	width: 550px;
+    height: 60px;
+    border: 1px solid #DBDBDB;       
+}
+
+.profileName{
+	position: relative;
+	top: -26px;
+	left: -170px;
+}
+
+.profileIcon{
+	position: relative;
+    top: 10px;
+    left: -250px;
+    width:40px;
+   	height:40px;
 }
 
 .resultContainer {
@@ -111,5 +114,4 @@ a{
     height: 550px;
     padding-top:10px;
     padding-bottom:10px;
-    border: 1px solid #DBDBDB;
 }
