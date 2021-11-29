@@ -54,9 +54,9 @@
 			<%if(list.get(i).getBoardAvailable() == 1){ %>	
 				<div class="btnArea">
 					<button type="button" id="changeToSold" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
+					<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
 				</div>	
-			<%} %> 
-			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
+			<%} %> 			
 			<%if(list.get(i).getBoardAvailable() == 1){ %>	
 				<div class="priceArea">
 					<h4><%= list.get(i).getBoardPrice() %></h4>
