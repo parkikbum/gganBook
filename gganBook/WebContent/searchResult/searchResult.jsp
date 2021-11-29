@@ -46,7 +46,17 @@
 		script.println("</script>");
 	}	
 	BoardDAO boardDAO = new BoardDAO();
-	ArrayList<Board> list = boardDAO.getSearchList(pageNumber, searchString);		
+	ArrayList<Board> list = boardDAO.getSearchList(pageNumber, searchString);
+	
+	%>
+	<% if(list.size() == 0){%>
+	<center>
+	<img src="../images/noSearchImage.png">
+	</center>
+	<% 
+	}
+	
+	
 	
 	for(int i = 0; i < list.size(); i++){
 %>        
