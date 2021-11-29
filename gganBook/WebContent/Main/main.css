@@ -157,7 +157,7 @@ h2{
 #mainText1,#mainText2,#mainText3,#mainText4,#mainText5{
     text-align: left;
     margin-top: 10px;
-    overflow: scroll;
+    overflow: hidden;
 }
 #sell_icon1,#sell_icon2,#sell_icon3,#sell_icon4,#sell_icon5{
     position: relative;

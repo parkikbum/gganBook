@@ -55,6 +55,17 @@ a{
     overflow: hidden;
 }
 
+._priceArea {
+	position: relative;
+	font-family: 'BinggraeMelona';
+    width: 490px;
+    height: 100px;
+    top: -118px;
+    left: 30px;
+    text-align:left;
+    overflow: hidden;
+}
+
 .btnArea {
 	position: relative;
 	font-family: 'BinggraeMelona';

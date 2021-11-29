@@ -45,23 +45,31 @@
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
-				<%if(list.get(i).getBoardAvailable() == 1){ %>
-							
+				<%if(list.get(i).getBoardAvailable() == 1){ %>			
 				<input id="forSale" value="판매중" disabled>
 				<%} else{ %>
 				<input id="sold" value="판매완료" disabled>
 				<%} %>                  
-			</div>
-			<div class="btnArea">
+			</div>		
+			<%if(list.get(i).getBoardAvailable() == 1){ %>	
+				<div class="btnArea">
 					<button type="button" id="changeToSold" onclick="location.href='isSoldAction.jsp?boardID=<%=list.get(i).getBoardID()%>'">판매완료로 변경하기</button>
-			</div>	
+				</div>	
+			<%} %> 
 			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
-			<div class="priceArea">
-				<h4><%= list.get(i).getBoardPrice() %></h4>
-				<h5><%= list.get(i).getBoardContent() %></h5>
-				<%} %>
-			</div> 
-			</a>
+			<%if(list.get(i).getBoardAvailable() == 1){ %>	
+				<div class="priceArea">
+					<h4><%= list.get(i).getBoardPrice() %></h4>
+					<h5><%= list.get(i).getBoardContent() %></h5>
+				</div> 
+			<%} else if(list.get(i).getBoardAvailable() == 0){%> 
+				<div class="_priceArea">
+					<h4><%= list.get(i).getBoardPrice() %></h4>
+					<h5><%= list.get(i).getBoardContent() %></h5>
+				</div> 
+			<%} %> 
+			<%} %> 
+			</a>			   
 		</div>
 	</div>
 	</form>
