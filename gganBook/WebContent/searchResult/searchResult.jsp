@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>searchResult</title>
+    <title>깐북</title>
     <link rel="stylesheet" href="../Header/Header.css?v=1.1" type="text/css">
     <link rel="stylesheet" href="searchResult.css?v=1.1" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -55,6 +55,10 @@
 		<div class="resultContainer">
 			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
+			<div class="profile-wrap">
+				<img src="../images/profile_icon.PNG" id="profile_icon1">
+	            <div id="profileName1"><%= list.get(i).getUserID() %></div>
+			</div>
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>
