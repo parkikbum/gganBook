@@ -91,7 +91,7 @@ a{
 	border: 1px solid #DBDBDB;
 }
 
-.container1{
+.container0,.container1{
     text-align: left;
     position: relative;
 }

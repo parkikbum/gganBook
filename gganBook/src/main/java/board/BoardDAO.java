@@ -58,8 +58,8 @@ public class BoardDAO {
 		return -1; //db오류
 	}
 	
-	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice, String boardPhoneNumber) {
-		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public int write(String boardTitle, String userID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice, String boardPhoneNumber, String nickName) {
+		String SQL = "INSERT INTO board VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -74,6 +74,7 @@ public class BoardDAO {
 			pstmt.setString(9, boardLocation);
 			pstmt.setString(10, boardPrice);
 			pstmt.setString(11, boardPhoneNumber);
+			pstmt.setString(12, nickName);
 			return pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -83,7 +84,7 @@ public class BoardDAO {
 	
 	public ArrayList<Board> getList(int pageNumber){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? ORDER BY boardID DESC LIMIT 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -104,8 +105,9 @@ public class BoardDAO {
 				board.setBoardUniv(rs.getString(8));
 				board.setBoardLocation(rs.getString(9));
 				board.setBoardPrice(rs.getString(10));
+				board.setNickName(rs.getString(12));
 				list.add(board);
-				System.out.println(rs.getString(2));
+				System.out.println(rs.getString(12));
 
 			}
 			
@@ -113,24 +115,6 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return list;
-	}
-	
-	public boolean nextPage(int pageNumber) {
-		String SQL = "SELECT * FROM board WHERE boardID < ? and boardAvailable = 1 ORDER BY boardID DESC LIMIT 5";
-		ArrayList<Board> list = new ArrayList<Board>();
-		try {
-PreparedStatement pstmt = conn.prepareStatement(SQL);
-			
-			pstmt.setInt(1, getNext() - (pageNumber -1) * 5);
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				return true;
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return false;
 	}
 	
 	public Board getBoard(int boardID) {
@@ -155,6 +139,8 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 				board.setBoardLocation(rs.getString(9));
 				board.setBoardPrice(rs.getString(10));
 				board.setBoardPhoneNumber(rs.getString(11));
+				board.setNickName(rs.getString(12));
+
 				return board;
 
 			}
@@ -190,7 +176,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 
 	public ArrayList<Board> getMyList(int pageNumber, String userID){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardID < ? and userID = ? ORDER BY boardID DESC LIMIT 5";
+		String SQL = "SELECT * FROM board WHERE boardID < ? and userID = ? ORDER BY boardID DESC LIMIT 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -225,7 +211,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 	
 	public ArrayList<Board> getSearchList(int pageNumber, String searchString){
 		//특정한 숫자보다 작은것.
-		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' order by boardID desc limit 5";
+		String SQL = "SELECT * FROM board WHERE boardTitle LIKE '%"+searchString+"%' order by boardID desc limit 20";
 		ArrayList<Board> list = new ArrayList<Board>();
 		
 		try {
@@ -246,6 +232,7 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 				board.setBoardUniv(rs.getString(8));
 				board.setBoardLocation(rs.getString(9));
 				board.setBoardPrice(rs.getString(10));
+				board.setNickName(rs.getString(12));
 				list.add(board);
 
 			}
@@ -256,8 +243,8 @@ PreparedStatement pstmt = conn.prepareStatement(SQL);
 		return list;
 	}
 	
-	public int edit(String boardTitle, String boardID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice) {
-		String SQL = "UPDATE board SET boardTitle ='"+boardTitle+"', boardContent ='"+boardContent+"', boardUniv = '"+boardUniv+"', boardLocation = '"+boardLocation+"', boardImage = '"+boardImage+"', boardPrice = '"+boardPrice+"' where boardID = '"+boardID+"'";
+	public int edit(String boardTitle, String boardID, String boardContent, String boardUniv, String boardLocation, String boardImage, String boardPrice, String nickName) {
+		String SQL = "UPDATE board SET boardTitle ='"+boardTitle+"', boardContent ='"+boardContent+"', boardUniv = '"+boardUniv+"', boardLocation = '"+boardLocation+"', nickName = '"+nickName+"', boardImage = '"+boardImage+"', boardPrice = '"+boardPrice+"' where boardID = '"+boardID+"'";
 
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);

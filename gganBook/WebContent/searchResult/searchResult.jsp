@@ -57,7 +57,7 @@
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
 			<div class="profile-wrap">
 				<img src="../images/profile_icon.PNG" id="profile_icon1">
-	            <div id="profileName1"><%= list.get(i).getUserID() %></div>
+	            <div id="profileName1"><%= list.get(i).getNickName() %></div>
 			</div>
 			<div class="txtArea">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
