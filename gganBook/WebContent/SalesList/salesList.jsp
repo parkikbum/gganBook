@@ -10,7 +10,7 @@
 <head>
     <title>깐북</title>
     <link rel="stylesheet" href="../Header/Header.css?v=1.1" type="text/css">
-    <link rel="stylesheet" href="salesList.css?v=3" type="text/css">
+    <link rel="stylesheet" href="salesList.css?v=1.2" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
@@ -43,7 +43,7 @@
 	<div class="mainContainer">
 		<div class="resultContainer">
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
-			<div class="txtArea">
+			<div class="txtAreaWrap">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>			
 				<input id="forSale" value="판매중" disabled>
@@ -58,12 +58,12 @@
 				</div>	
 			<%} %> 			
 			<%if(list.get(i).getBoardAvailable() == 1){ %>	
-				<div class="priceArea">
+				<div class="textArea">
 					<h4><%= list.get(i).getBoardPrice() %></h4>
 					<h5><%= list.get(i).getBoardContent() %></h5>
 				</div> 
 			<%} else if(list.get(i).getBoardAvailable() == 0){%> 
-				<div class="_priceArea">
+				<div class="_textArea">
 					<h4><%= list.get(i).getBoardPrice() %></h4>
 					<h5><%= list.get(i).getBoardContent() %></h5>
 				</div> 
