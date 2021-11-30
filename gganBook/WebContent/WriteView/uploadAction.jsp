@@ -23,11 +23,19 @@
 		PrintWriter script = response.getWriter();
 		 // 해당 폴더에 이미지를 저장시킨다
   	 	 String uploadDir =this.getClass().getResource("/").getPath();
+		 if(uploadDir.indexOf(".metadata") == -1){
+			 File file = new File(".");
+			 String rootPath = file.getAbsolutePath();
+			 uploadDir = rootPath.substring(0,rootPath.indexOf("bin"))+"webapps/gganBook/uploadImage";
+			 uploadDir = "/"+uploadDir;
+			 }
+		 else{
+			 System.out.println("절대경로 : " + uploadDir); 		
+			 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))+"gganBook/WebContent/uploadImage";
+			 System.out.println("절대경로 : " + uploadDir); 		
+		 }
 		 
-		 String test = this.getClass().getResource("/").getPath();
 		 
-		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))+"gganBook/WebContent/uploadImage";
-		 System.out.println("절대경로 : " + uploadDir + "<br/>"); 		
 		// 총 100M 까지 저장 가능하게 함
 		int maxSize = 1024 * 1024 * 100;
 		String encoding = "UTF-8";		
@@ -42,7 +50,6 @@
 		// 디비에 업로드 메소드
 		session.setAttribute("imageURL", "../uploadImage/" + fileRealName);
 		System.out.println("파일명 : " + fileName);
-		System.out.println("테스트 : " +test);
 
 		System.out.println("imageURL"+ "../uploadImage/" + fileName);
 		System.out.println(board.getBoardImage());
