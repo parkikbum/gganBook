@@ -69,19 +69,19 @@
 				<img src="../images/profile_icon.PNG" class="profileIcon">
 	            <div class="profileName"><%= list.get(i).getNickName() %></div>
 			</div>
-			<div class="txtArea">
+			<div class="textAreaWrap">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>
 				<input id="forSale" value="판매중" disabled>
 				<%} else{ %>
 				<input id="sold" value="판매완료" disabled>
-				<%} %>                  
+				<%} %>   				                
 			</div>
-			<div class="priceArea">
+			<div class="textArea">
 				<h4><%= list.get(i).getBoardPrice() %></h4>
-				<h5><%= list.get(i).getBoardContent() %></h5>
-				<%} %>
-			</div> 
+				<h5><%= list.get(i).getBoardContent() %></h5>				
+			</div> 	
+			<%} %> 		
 			</a>
 		</div>
 	</div>

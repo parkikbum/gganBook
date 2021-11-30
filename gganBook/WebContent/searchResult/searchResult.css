@@ -50,30 +50,32 @@ a{
 .resultContainer {
     position: relative;
     width: 550px;
-    height: 740px;
+    height: 580px;
     margin-top: 30px;
     border: 1px solid #DBDBDB;
     text-align: center;
 }
 
-.txtArea {
+.textAreaWrap {
 	position: relative;
     display: flex;
     flex-direction: row;
-    width: 490px;
+    width: 520px;
     height: 160px;
-	top:-70px;
-	left:20px;
+	top: -57px;
+	left: -1px;
 	overflow: hidden;
+	border: 1px solid #DBDBDB;
+	padding-left: 30px;
 }
 
-.priceArea {
+.textArea {
 	position: relative;
 	font-family: 'BinggraeMelona';
     width: 490px;
     height: 100px;
-    top:-190px;
-    left: 20px;
+    top: -178px;
+    left: 30px;
     text-align:left;
     overflow: hidden;
 }

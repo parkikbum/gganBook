@@ -43,7 +43,7 @@
 	<div class="mainContainer">
 		<div class="resultContainer">
 			<img src="<%= list.get(i).getBoardImage() %>" id="image">
-			<div class="txtAreaWrap">
+			<div class="textAreaWrap">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
 				<%if(list.get(i).getBoardAvailable() == 1){ %>			
 				<input id="forSale" value="판매중" disabled>
