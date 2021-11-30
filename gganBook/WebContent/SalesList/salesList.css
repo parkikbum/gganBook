@@ -33,18 +33,20 @@ a{
     text-align: center;
 }
 
-.txtArea {
+.txtAreaWrap {
 	position: relative;
     display: flex;
     flex-direction: row;
-    width: 490px;
+    width: 520px;
     height: 160px;
-	top: 0px;
-	left: 30px;
+	top: 4px;
+	left: -1px;
 	overflow: hidden;
+	border: 1px solid #DBDBDB;
+	padding-left: 30px;
 }
 
-.priceArea {
+.textArea {
 	position: relative;
 	font-family: 'BinggraeMelona';
     width: 490px;
@@ -55,12 +57,12 @@ a{
     overflow: hidden;
 }
 
-._priceArea {
+._textArea {
 	position: relative;
 	font-family: 'BinggraeMelona';
     width: 490px;
     height: 100px;
-    top: -118px;
+    top: -117px;
     left: 30px;
     text-align:left;
     overflow: hidden;
@@ -130,5 +132,4 @@ a{
     height: 550px;
     padding-top:10px;
     padding-bottom:10px;
-    border: 1px solid #DBDBDB;
 }
