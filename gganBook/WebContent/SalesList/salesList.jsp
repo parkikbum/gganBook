@@ -9,7 +9,7 @@
 
 <head>
     <title>깐북</title>
-    <link rel="stylesheet" href="../Header/Header.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="../Header/Header.css?v=1.3" type="text/css">
     <link rel="stylesheet" href="salesList.css?v=1.1" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
@@ -41,8 +41,9 @@
          
 <!-- 뷰 부분 -->
 	<div class="mainContainer">
-		<div class="resultContainer">			
-			<img src="<%= list.get(i).getBoardImage() %>" id="image" onclick="location.href='../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>'">			
+		<div class="resultContainer">
+			<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">		
+			<img src="<%= list.get(i).getBoardImage() %>" id="image">			
 			<div class="textAreaWrap">
 				<a href="../DetailView/detail.jsp?boardID=<%=list.get(i).getBoardID() %>">
 				<h2><%=list.get(i).getBoardTitle() %></h2>
