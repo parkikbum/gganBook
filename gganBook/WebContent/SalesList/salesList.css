@@ -42,7 +42,9 @@ a{
 	top: 4px;
 	left: -1px;
 	overflow: hidden;
-	border: 1px solid #DBDBDB;
+	border-left: 1px solid #DBDBDB;
+	border-right: 1px solid #DBDBDB;
+	border-bottom: 1px solid #DBDBDB;
 	padding-left: 30px;
 }
 
