@@ -35,7 +35,6 @@
  			session.setAttribute("userID", user.getuserID());
  			session.setAttribute("userUniv", user.getuserUniv());
  			session.setAttribute("userNickname", user.getNickname());
- 			System.out.println(session.getAttribute("userID"));
  			PrintWriter  script = response.getWriter();
  			script.println("<script>");
  			script.println("location.href='../Main/main.jsp'");

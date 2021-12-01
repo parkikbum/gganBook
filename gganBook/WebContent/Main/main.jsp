@@ -153,7 +153,6 @@
 	                            	<div class="image-div">
 	                            	<div class="content-image">
 			                            <img src="<%= list.get(i).getBoardImage() %>" id="booksample1"><p>
-			                            <%System.out.println(list.get(i).getNickName()); %>
 		                            </div>
 	                            </div>
                             </div>

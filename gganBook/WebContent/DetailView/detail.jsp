@@ -76,7 +76,7 @@
 					}
 				}
 				</script>			            
-				<% System.out.println("글쓴 사람입니다.");} %>
+				<% } %>
 			</div>
 		</div>
 			</form>

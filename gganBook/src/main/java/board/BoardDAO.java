@@ -107,7 +107,6 @@ public class BoardDAO {
 				board.setBoardPrice(rs.getString(10));
 				board.setNickName(rs.getString(12));
 				list.add(board);
-				System.out.println(rs.getString(12));
 
 			}
 			

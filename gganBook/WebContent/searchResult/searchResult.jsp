@@ -33,7 +33,6 @@
 	if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 	}
-	System.out.println(request.getParameter("search"));
 	String searchString = null;
 	if (request.getParameter("search") != null){
 		searchString = request.getParameter("search");		

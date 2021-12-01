@@ -27,7 +27,6 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
-		System.out.println(session.getAttribute("userID"));
 		if(userID == null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -36,7 +35,6 @@
 			script.println("</script>");
 		} else{
 			if (board.getBoardTitle() == null || board.getBoardContent() == null){
-				System.out.println(board.getBoardImage() + board.getBoardContent());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('입력이 안된 사항이 있습니다.')");
@@ -44,13 +42,6 @@
 				script.println("</script>");
 			} else{
 				BoardDAO boardDAO = new BoardDAO();
-				//int boardID = 0;
-		        //if(request.getParameter("boardID") != null){
-		        //	System.out.println(request.getParameter("boardID"));
-		        //	boardID = Integer.parseInt(request.getParameter("boardID"));
-		        //}
-	
-				System.out.println((String)session.getAttribute("userNickName"));
 				int result = boardDAO.edit(board.getBoardTitle(),
 						String.valueOf(session.getAttribute("boardID")) , 
 						board.getBoardContent(), 
@@ -68,7 +59,6 @@
 					script.println("</script>");
 				}else{
 					PrintWriter script = response.getWriter();
-					System.out.println(board.getBoardImage() + board.getBoardContent());
 					script.println("<script>");
 					script.println("alert('글 수정 성공!')");
 					script.println("location.href='../Main/main.jsp'");
